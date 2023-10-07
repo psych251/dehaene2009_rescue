@@ -1,6 +1,6 @@
 ---
-title: "Replication of Study X by Sample & Sample (20xx, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of -Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al. (2009, NeuroImage)"
+author: "Neha Rajagopalan (Email ID: neharaj@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
@@ -14,6 +14,17 @@ format:
 
 [No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
 
+### Justification
+As a PhD student in Developmental and Psychological Sciences at the Graduate School of Education, I am constantly thinking about methods to study underlying neural and behavioral changes that occur during learning through comparison of child and adult scenarios. Given my interests, I believe that the current chosen topic aligns perfectly with my goal to expand knowledge in the education psychology space. The paper by Dehaene et al. discusses the disappearance of the “mirror effect” (i.e. writing words from right to left while children learn to read and write) in adults and further investigates a higher presence of mirror image generalization for pictures than words through a behavioral task conducted in an fMRI scanner. In the past, I have explored literature in auditory processing and narratives for learning. Through this rescue project, however, I intend to be introduced to experiment design, priming effects and analysis metrics used in visual mechanism studies. 
+
+### Stimuli, Procedure and Challenges
+The behavioral task (called the “same-different” task) involves presenting 14 french words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, and 14 unknown scripts (all black and white) as visual stimuli along with their left-right reversed mirror images. Each trial displays two images from the same category at a fixation position with 200ms of presentation and 300ms of inter-stimulus interval. The participant responds with “same” to the pair of images if they are physically identical (eg. same word both in normal orientation or mirrored) and “different” if they are either unrelated (eg. two different words from the same category) or differently oriented (eg. word followed by mirrored orientation). 
+
+The target population is adults with a mean age of 23 years. The original task was, however, conducted on French and Japanese participants. One challenge, I can foresee, is making the choice between maintaining the cultural context (which might make recruiting participants difficult and generating language target stimuli time consuming) and generalizing the study to all participants. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror generalization in adults.
+
+### Links to repository and original paper
+[Link to github repository](https://github.com/psych251/dehaene2009_rescue)  
+[Link to original paper in repository](https://github.com/psych251/dehaene2009_rescue/blob/main/original_paper/Dehaene2009_original_paper.pdf)
 
 ## Summary of prior replication attempt
 
