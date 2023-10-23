@@ -1,5 +1,5 @@
 ---
-title: "Replication of -Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al. (2009, NeuroImage)"
+title: "Replication of - Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al. (2009, NeuroImage)"
 author: "Neha Rajagopalan (Email ID: neharaj@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
@@ -27,13 +27,13 @@ The target population is adults with a mean age of 23 years. The original task w
 [Link to github repository](https://github.com/psych251/dehaene2009_rescue)  
 [Link to original paper in repository](https://github.com/psych251/dehaene2009_rescue/blob/main/original_paper/Dehaene2009_original_paper.pdf)
 
-### Links to original replication project repository and experiment paradigm:
-[Link to repository](https://github.com/psych251/dehaene2009)
+### Links to replication project repository and experiment paradigm:
+[Link to replication project repository](https://github.com/psych251/dehaene2009)  
 [Link to experiment paradigm](https://psych251.github.io/dehaene2009/)
 
 ## Summary of prior replication attempt
 
-Based on a preliminary comparison between the original report and the 1st replication, there are no differences in sample size, method and analysis. Since the original study included an fMRI task, the study was conducted in-person as opposed to the replication study that collected behavioral data online. Due to this difference, participants did not have any exposure to same-different task in the replication study while they did during the original study. The original study had a final mean age of 23 years across participants but the replication study had a mean age of 36 years. 
+Based on a preliminary comparison between the original report and the 1st replication, there are no differences in sample size, method and analysis. Since the original study included an fMRI task, the study was conducted in-person as opposed to the replication study that collected behavioral data online. Due to this difference, participants did not have any exposure to same-different task in the replication study while they did during the original study. The original study had a final mean age of 23 years across participants but the replication study had a mean age of 36 years. The replication attempt was only partially successful since the author obtained results that were both consistent and inconsistent with the original report for different analysis tests. 
 
 ## Methods
 ### Power Analysis
@@ -51,7 +51,7 @@ The rescue project will increase the sample size to 40 participants and exclude 
 ### Materials
 "All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters). French and Japanese words were matched on frequency (mean Log10 frequency = 1.14 versus 0.90, n.s.)." - Pg 1846
 
-The French and Japanese words will be substituted with English words to maintain uniformity for cultural contexts. The same rules will be followed.
+The French and Japanese words will be substituted with English words to maintain uniformity for cultural contexts. The other rules for stimuli presentation will be maintained in the current study.
 
 
 
@@ -77,9 +77,7 @@ The five categories will be substitued with four categories (English, tools, fac
 
 ### Differences from Original Study and 1st replication
 
-Apart from choosing a different sample size, removing a cultural group by generalizing the sample to English speakers, conductng the study online and introducing a block wise presentation of the stimuli, there are no significant differences in the current experiment design with the previous replication and orignal study.
-
-The replication study decided to exclude trials that had response times lesser than 200ms and greater than 2000ms. However, the current study would like to enforce attention through a message and substitute trial instead of excluding trials.
+The original study does not mention any methods of exclusion criteria or insertion of attention checks, whereas the replication study added the exclusion criteria since it was an online study (as opposed to the original study that was conducted in-person). Participants in the replication study did not have any exposure to same-different task while they did during the original study. The original study had a final mean age of 23 years across participants but the replication study had a mean age of 36 years. Apart from these, there were no significant differences in the original study and the replication study. The results were however not completely consistent. One ANOVA analysis was replicable whereas an additional second analysis was not. 
 
 ### Methods Addendum (Post Data Collection)
 
@@ -97,7 +95,7 @@ You can comment this section out prior to final report with data collection.
 
 ### Data preparation
 
-Data preparation following the analysis plan.
+The replication report cleaned the raw data (added a column) by clearly indicating whether the stimuli pairs were mirror imaged or normally oriented.Preprocessing of data was completed prior to the anlaysis to obtain required rows and columns for the mirror invariance task.
 	
 ```{r include=F}
 ### Data Preparation
@@ -113,13 +111,16 @@ Data preparation following the analysis plan.
 
 ### Results of control measures
 
-How did people perform on any quality control checks or positive and negative controls? 
+As mentioned above, there were no quality control checks or positive and negative controls in the replication study. The study excluded trials that had response times lesser than 100ms and greater than 2000ms to remove attention deficit trials, and trials with accidental button presses. Additionally subjects with less than 80 percent accuracy were removed from the analysis to ensure attention of participants.
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+The replication study conducted ANOVA and found that category the effect on mean correct response times was significant (p=0.04708) and consistent with the original study. The author also ran an additional ANOVA to compare means of categories between each other but did not observe significant results (inconsistent with original study).
 
-*Three-panel graph with original, 1st replication, and your replication is ideal here*
+
+![Results from Original study](/Users/neharajagopalan/STANFORD_PHD/Fall23/PSYCH_251/PROJECT/dehaene2009_rescue/writeup/Original.png)  
+![Results from Replication study](/Users/neharajagopalan/STANFORD_PHD/Fall23/PSYCH_251/PROJECT/dehaene2009_rescue/writeup/Replication.png) 
+
 
 ### Exploratory analyses
 
