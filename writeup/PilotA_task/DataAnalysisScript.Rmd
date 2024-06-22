@@ -1,0 +1,113 @@
+---
+title: 'PSYCH 251: Replication Project Data Analysis Script'
+author: "Neha Rajagopalan"
+date: "2024-06-21"
+output: html_document
+---
+
+
+## Data Loading, Cleaning and Filtering
+
+### Loading Libraries
+
+```{r}
+library("tidyverse")
+library("dplyr")
+```
+
+### Reading data of two pilot participants
+
+```{r}
+df.participant1 = read_csv("PilotA_Data/pilotA_data.csv") %>%
+  slice(18:n())
+df.participant2 = read_csv("PilotA_Data/pilotA_data1.csv") %>%
+  slice(18:n())
+
+df.participant = rbind(df.participant1, df.participant2)
+df.participant
+```
+
+### Filtering data for relevant columns and values
+
+```{r}
+df.response = df.participant %>%
+  select(rt, stimulus, response, task, correct_response, category) %>%
+  filter(!is.na(correct_response)) %>%
+  select(-c(stimulus))
+
+df.response
+```
+
+
+
+### Retrieving correct answers and responses with appropriate response time
+
+```{r}
+# Here we filter for responses that have a response time between 100ms and 2000ms
+df.correct = df.response %>%
+  filter(as.numeric(rt) >= 100) %>%
+  filter(as.numeric(rt) <= 2000) %>%
+# Here we filter correct responses
+  filter(response == correct_response) 
+
+df.correct
+```
+
+Key for category codes:
+
+Format: Same/Different(S/D) image | Mirror/Normal(M/N) orientation | French/Japanese/Faces/False/Tools (F/J/M/P/T) group
+
+1. DMF - Different Mirror French
+2. DMJ - Different Mirror Japanese
+3. DMM - Different Mirror Faces
+4. DMP - Different Mirror False
+5. DMT - Different Mirror Tools
+6. DNF - Different Normal French
+7. DNJ - Different Normal Japanese
+8. DNM - Different Normal Faces
+9. DNP - Different Normal False
+10. DNT - Different Normal Tools
+11. SMF - Same Mirror French
+12. SMJ - Same Mirror Japanese
+13. SMM - Same Mirror Faces
+14. SMP - Same Mirror False
+15. SMT - Same Mirror Tools
+16. SNF - Same Normal French
+17. SNJ - Same Normal Japanese
+18. SNM - Same Normal Faces
+19. SNP - Same Normal False
+20. SNT - Same Normal Tools
+
+
+### Split category column into Group Categories (Japanese, French, Faces, False, Tools) and Same/Different - Mirror/Normal Categories
+
+```{r}
+df.correct$SDNM = substr(df.correct$category, 1, 2)
+df.correct$group = substr(df.correct$category, 3, 3)
+
+df.correct = df.correct %>%
+  select(-c(category))
+df.correct
+```
+
+
+## Data Analysis Script 
+
+### Median correct response times summary and Category codes
+```{r}
+median_rt = df.correct %>%
+  group_by(group, SDNM)%>%
+  summarise(median_rt = median(as.numeric(rt), na.rm =FALSE))
+
+median_rt
+```
+ 
+
+
+## ANOVA for median response times: 
+
+```{r}
+anova_results <- aov(median_rt$median_rt ~ median_rt$group)
+summary(anova_results)
+```
+

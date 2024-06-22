@@ -31,6 +31,18 @@ The target population is adults with a mean age of 23 years. The original task w
 [Link to replication project repository](https://github.com/psych251/dehaene2009)  
 [Link to experiment paradigm](https://psych251.github.io/dehaene2009/)
 
+### Link to current replication study experiment paradigm and Pilot A data analysis:
+[Link to experiment paradigm]()
+[Link to pilot data, and analysis script]()
+
+## Comments and feedback on pilot A data and analysis:
+
+1. Pilot A data was collected on 2 non-naive participants.
+2. The data analysis pipeline coded below works on the collected pilot data. 
+3. Feedback for pilot A:
+    a. Request to increase the time of presentation of stimuli to be able to process the image, especially for words. 
+    b. The target buttons 's' and 'd'  are next to each other. This was helpful to quickly respond but also was the reason for error. If one button for 'same' target was to the right of the keyboard and the other target button for 'different' was on the left side of the keyboard, the usage of right and left hand to touch the target buttons would be helpful to differentiate between the two targets and reduce error in response.
+
 ## Summary of prior replication attempt
 
 Based on a preliminary comparison between the original report and the 1st replication, there are no differences in sample size, method and analysis. Since the original study included an fMRI task, the study was conducted in-person as opposed to the replication study that collected behavioral data online. Due to this difference, participants did not have any exposure to same-different task in the replication study while they did during the original study. The original study had a final mean age of 23 years across participants but the replication study had a mean age of 36 years. The replication attempt was only partially successful since the author obtained results that were both consistent and inconsistent with the original report for different analysis tests. 
@@ -51,15 +63,13 @@ The rescue project will increase the sample size to 40 participants and exclude 
 ### Materials
 "All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters). French and Japanese words were matched on frequency (mean Log10 frequency = 1.14 versus 0.90, n.s.)." - Pg 1846
 
-The French and Japanese words will be substituted with English words to maintain uniformity for cultural contexts. The other rules for stimuli presentation will be maintained in the current study.
-
 
 
 ### Procedure	
 
 "The stimuli for the behavioral same-different task, performed after fMRI, were 14 French words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, 14 unknown script stimuli, and their corresponding left–right reversed mirror images. On each trial, two stimuli from the same category were successively presented at the fixation (200 ms presentation of each image, 300 ms inter-stimulus interval with fixation cross). The participant's task was to decide whether the two stimuli depicted the same object, possibly in mirror- form. Thus, the participants had to respond “same” both to physically identical stimuli (1/4 of trials) and to mirror images (1/4 of trials). They had to respond “different” whenever the stimuli were unrelated, whether they were in the same orientation (e.g. two normally oriented words; two faces in the same orientation; 1/4 of trials), or whether they were in different orientations (e.g. one word followed by a mirror image of a word). The first stimulus, drawn from one of the five categories, was always in standard orientation, and the second stimulus was defined by a 2 × 2 factorial design with factors of identity (same or different object) and orientation (same or different left– right orientation). This design defined a list of 14 × 5 × 2 × 2 = 280 trials, which were run once in random order." - Pg 1846
 
-The differences for the rescue study includes using four categories instead of five by merging the French words and Japanese characters categories as one category consisting of English words. Therefore the number of trials will reduce to 14 x 4 x 2 x 2 = 224 trials. 
+
 
 ### Controls
 
@@ -71,7 +81,6 @@ Similar to the original study and the replication report, the following analysis
 
 "The following analysis plan will be followed from the study: Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts)."
 
-The five categories will be substitued with four categories (English, tools, faces, and false fonts).
 
 <!--**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.-->
 
@@ -97,16 +106,62 @@ You can comment this section out prior to final report with data collection.
 
 The replication report cleaned the raw data (added a column) by clearly indicating whether the stimuli pairs were mirror imaged or normally oriented.Preprocessing of data was completed prior to the anlaysis to obtain required rows and columns for the mirror invariance task.
 	
-```{r include=F}
+```{r include=T}
 ### Data Preparation
 
+
 #### Load Relevant Libraries and Functions
+library("tidyverse")
+library("dplyr")
 
 #### Import data
+df.participant1 = read_csv("PilotA_task/PilotA_Data/pilotA_data.csv") %>%
+  slice(18:n())
+df.participant2 = read_csv("PilotA_task/PilotA_Data/pilotA_data1.csv") %>%
+  slice(18:n())
+
+df.participant = rbind(df.participant1, df.participant2)
+df.participant
 
 #### Data exclusion / filtering
 
+df.response = df.participant %>%
+  select(rt, stimulus, response, task, correct_response, category) %>%
+  filter(!is.na(correct_response)) %>%
+  select(-c(stimulus))
+
+df.response
+
+# Here we filter for responses that have a response time between 100ms and 2000ms
+df.correct = df.response %>%
+  filter(as.numeric(rt) >= 100) %>%
+  filter(as.numeric(rt) <= 2000) %>%
+# Here we filter correct responses
+  filter(response == correct_response) 
+
+df.correct
+
 #### Prepare data for analysis - create columns etc.
+df.correct$SDNM = substr(df.correct$category, 1, 2)
+df.correct$group = substr(df.correct$category, 3, 3)
+
+df.correct = df.correct %>%
+  select(-c(category))
+
+df.correct
+
+#### Data analysis
+##Median RT##
+median_rt = df.correct %>%
+  group_by(group, SDNM)%>%
+  summarise(median_rt = median(as.numeric(rt), na.rm =FALSE))
+
+median_rt
+
+#### Anova analysis
+anova_results <- aov(median_rt$median_rt ~ median_rt$group)
+summary(anova_results)
+
 ```
 
 ### Results of control measures

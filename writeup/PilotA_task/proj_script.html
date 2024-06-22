@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mirror Invariance experiment</title>
+    <script src="https://unpkg.com/jspsych@7.3.4"> /* Load jsPsych library */ </script>  
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3">/* To show text on screen */</script>
+    <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.3">/* Keyboard response */</script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.3">/* Button plugin */</script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.3">/* Preload plugin */</script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.4">/* Instructions plugin */</script>
+    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+        /* Initialize jsPsych */
+        var jsPsych = initJsPsych({
+            on_finish: function() {
+            //    jsPsych.data.displayData('csv');
+                jsPsych.data.get().localSave( 'csv','pilotA_data.csv');
+            }
+        }); 
+
+        /* Timeline array holding stimuli*/
+        var timeline = [];
+
+        /* 
+        ------------------------
+        PRELOADING
+        ------------------------
+        */
+
+        var preload = {
+            type: jsPsychPreload,
+            images: [
+                // Faces
+                'img_mproj/faces/1.jpg',
+                'img_mproj/faces/2.jpg',
+                'img_mproj/faces/3.jpg',
+                'img_mproj/faces/4.jpg',
+                'img_mproj/faces/5.jpg',
+                'img_mproj/faces/6.jpg',
+                'img_mproj/faces/7.jpg',
+                'img_mproj/faces/8.jpg',
+                'img_mproj/faces/9.jpg',
+                'img_mproj/faces/10.jpg',
+                'img_mproj/faces/11.jpg',
+                'img_mproj/faces/12.jpg',
+                'img_mproj/faces/13.jpg',
+                'img_mproj/faces/14.jpg',
+                // Mfaces
+                'img_mproj/Mfaces/1.jpg',
+                'img_mproj/Mfaces/2.jpg',
+                'img_mproj/Mfaces/3.jpg',
+                'img_mproj/Mfaces/4.jpg',
+                'img_mproj/Mfaces/5.jpg',
+                'img_mproj/Mfaces/6.jpg',
+                'img_mproj/Mfaces/7.jpg',
+                'img_mproj/Mfaces/8.jpg',
+                'img_mproj/Mfaces/9.jpg',
+                'img_mproj/Mfaces/10.jpg',
+                'img_mproj/Mfaces/11.jpg',
+                'img_mproj/Mfaces/12.jpg',
+                'img_mproj/Mfaces/13.jpg',
+                'img_mproj/Mfaces/14.jpg',
+                // False
+                'img_mproj/false/1.jpg',
+                'img_mproj/false/2.jpg',
+                'img_mproj/false/3.jpg',
+                'img_mproj/false/4.jpg',
+                'img_mproj/false/5.jpg',
+                'img_mproj/false/6.jpg',
+                'img_mproj/false/7.jpg',
+                'img_mproj/false/8.jpg',
+                'img_mproj/false/9.jpg',
+                'img_mproj/false/10.jpg',
+                'img_mproj/false/11.jpg',
+                'img_mproj/false/12.jpg',
+                'img_mproj/false/13.jpg',
+                'img_mproj/false/14.jpg',
+                // Mfalse
+                'img_mproj/Mfalse/1.jpg',
+                'img_mproj/Mfalse/2.jpg',
+                'img_mproj/Mfalse/3.jpg',
+                'img_mproj/Mfalse/4.jpg',
+                'img_mproj/Mfalse/5.jpg',
+                'img_mproj/Mfalse/6.jpg',
+                'img_mproj/Mfalse/7.jpg',
+                'img_mproj/Mfalse/8.jpg',
+                'img_mproj/Mfalse/9.jpg',
+                'img_mproj/Mfalse/10.jpg',
+                'img_mproj/Mfalse/11.jpg',
+                'img_mproj/Mfalse/12.jpg',
+                'img_mproj/Mfalse/13.jpg',
+                'img_mproj/Mfalse/14.jpg',
+                // French
+                'img_mproj/french/1.jpg',
+                'img_mproj/french/2.jpg',
+                'img_mproj/french/3.jpg',
+                'img_mproj/french/4.jpg',
+                'img_mproj/french/5.jpg',
+                'img_mproj/french/6.jpg',
+                'img_mproj/french/7.jpg',
+                'img_mproj/french/8.jpg',
+                'img_mproj/french/9.jpg',
+                'img_mproj/french/10.jpg',
+                'img_mproj/french/11.jpg',
+                'img_mproj/french/12.jpg',
+                'img_mproj/french/13.jpg',
+                'img_mproj/french/14.jpg',
+                // Mfrench
+                'img_mproj/Mfrench/1.jpg',
+                'img_mproj/Mfrench/2.jpg',
+                'img_mproj/Mfrench/3.jpg',
+                'img_mproj/Mfrench/4.jpg',
+                'img_mproj/Mfrench/5.jpg',
+                'img_mproj/Mfrench/6.jpg',
+                'img_mproj/Mfrench/7.jpg',
+                'img_mproj/Mfrench/8.jpg',
+                'img_mproj/Mfrench/9.jpg',
+                'img_mproj/Mfrench/10.jpg',
+                'img_mproj/Mfrench/11.jpg',
+                'img_mproj/Mfrench/12.jpg',
+                'img_mproj/Mfrench/13.jpg',
+                'img_mproj/Mfrench/14.jpg',
+                // Jap
+                'img_mproj/jap/1.jpg',
+                'img_mproj/jap/2.jpg',
+                'img_mproj/jap/3.jpg',
+                'img_mproj/jap/4.jpg',
+                'img_mproj/jap/5.jpg',
+                'img_mproj/jap/6.jpg',
+                'img_mproj/jap/7.jpg',
+                'img_mproj/jap/8.jpg',
+                'img_mproj/jap/9.jpg',
+                'img_mproj/jap/10.jpg',
+                'img_mproj/jap/11.jpg',
+                'img_mproj/jap/12.jpg',
+                'img_mproj/jap/13.jpg',
+                'img_mproj/jap/14.jpg',
+                // Mjap
+                'img_mproj/Mjap/1.jpg',
+                'img_mproj/Mjap/2.jpg',
+                'img_mproj/Mjap/3.jpg',
+                'img_mproj/Mjap/4.jpg',
+                'img_mproj/Mjap/5.jpg',
+                'img_mproj/Mjap/6.jpg',
+                'img_mproj/Mjap/7.jpg',
+                'img_mproj/Mjap/8.jpg',
+                'img_mproj/Mjap/9.jpg',
+                'img_mproj/Mjap/10.jpg',
+                'img_mproj/Mjap/11.jpg',
+                'img_mproj/Mjap/12.jpg',
+                'img_mproj/Mjap/13.jpg',
+                'img_mproj/Mjap/14.jpg',
+                // Tools
+                'img_mproj/tools/1.jpg',
+                'img_mproj/tools/2.jpg',
+                'img_mproj/tools/3.jpg',
+                'img_mproj/tools/4.jpg',
+                'img_mproj/tools/5.jpg',
+                'img_mproj/tools/6.jpg',
+                'img_mproj/tools/7.jpg',
+                'img_mproj/tools/8.jpg',
+                'img_mproj/tools/9.jpg',
+                'img_mproj/tools/10.jpg',
+                'img_mproj/tools/11.jpg',
+                'img_mproj/tools/12.jpg',
+                'img_mproj/tools/13.jpg',
+                'img_mproj/tools/14.jpg',
+                // Mtools
+                'img_mproj/Mtools/1.jpg',
+                'img_mproj/Mtools/2.jpg',
+                'img_mproj/Mtools/3.jpg',
+                'img_mproj/Mtools/4.jpg',
+                'img_mproj/Mtools/5.jpg',
+                'img_mproj/Mtools/6.jpg',
+                'img_mproj/Mtools/7.jpg',
+                'img_mproj/Mtools/8.jpg',
+                'img_mproj/Mtools/9.jpg',
+                'img_mproj/Mtools/10.jpg',
+                'img_mproj/Mtools/11.jpg',
+                'img_mproj/Mtools/12.jpg',
+                'img_mproj/Mtools/13.jpg',
+                'img_mproj/Mtools/14.jpg'
+
+            ],
+            show_progress_bar: true
+        };
+
+        /*
+        -------------------------------------------
+        WELCOME AND INSTRUCTIONS
+        -------------------------------------------        
+        */
+
+        var welcome = {
+            type: jsPsychInstructions,
+            pages: [
+            `<p>Welcome to the experiment. By answering the following questions, you are participating in a study being performed by cognitive scientists 
+            in the Stanford Department of Psychology. If you have questions about this research, please contact us at stanfordpsych251@gmail.com. You must be at 
+            least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. 
+            You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your 
+            participation will not receive any personal information about you. Click next to continue to the experiment. </p>`,
+            `<p>Before starting the experiment, please ensure that you are performing this task on a laptop or a desktop. In addition, please set your 
+            window size to less than 100% by pressing the command/Ctrl and - (minus sign) keys simultaneously or by going on View > Zoom out. </p>`,
+            `<p>Directions: You will be presented one image after another. Press S if the first word or image is the same as the second word or image. 
+            The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. </p>`,
+            `<p>Let us try a few examples. Click next to begin trial. </p>`
+
+            ],
+            show_clickable_nav: true
+        }
+
+        // var welcome = {
+        //     type: jsPsychHtmlButtonResponse,
+        //     stimulus: `<p>Welcome to the experiment. By answering the following questions, you are participating in a study being performed by cognitive scientists 
+        //     in the Stanford Department of Psychology. If you have questions about this research, please contact us at stanfordpsych251@gmail.com. You must be at 
+        //     least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. 
+        //     You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your 
+        //     participation will not receive any personal information about you. Click next to continue to the experiment. </p>`,
+        //     choices: ['Next']
+        // };
+
+        // var view_inst = {
+        //     type: jsPsychHtmlButtonResponse,
+        //     stimulus: `<p>Before starting the experiment, please ensure that you are performing this task on a laptop or a desktop. In addition, please set your 
+        //     window size to less than 100% by pressing the command/Ctrl and - (minus sign) keys simultaneously or by going on View > Zoom out. </p>`,
+        //     choices: ['Previous', 'Next']
+        // };
+
+        // var task_inst = {
+        //     type: jsPsychHtmlButtonResponse,
+        //     stimulus: `<p>Directions: You will be presented one image after another. Press S if the first word or image is the same as the second word or image. 
+        //     The word or image can be in the same or different orientation. Press D if the second word or image is different from the first word or image. </p>`,
+        //     choices: ['Previous', 'Next']
+        // };
+
+        // var eg_view = {
+        //     type: jsPsychHtmlButtonResponse,
+        //     stimulus: `<p>Let us try a few examples. Click next to begin trial. </p>`,
+        //     choices: ['Previous', 'Next']
+        // };
+
+        /*
+        -----------------------------------------------------
+        TRIAL COMPONENTS + FIXATION + RESPONSE COLLECTION TEXT
+        ------------------------------------------------------                
+        */
+
+         /* define TRIAL stimuli array for timeline variables */
+         var test_stimuli = [
+            { stimulus1: 'img_mproj/french/2.jpg', stimulus2: 'img_mproj/french/2.jpg', txt: "<p>The two words were the same, with same orientation. The correct response was 'S'. Let us try another example. Click next to continue.</p>", correct_response:'s', answer:'SNF'},
+            { stimulus1: 'img_mproj/tools/2.jpg' , stimulus2: "img_mproj/Mtools/2.jpg", txt: "<p>The two images were the same, but in different orientation. The correct response was 'S'. Let us try one last example. Click next to continue.</p>", correct_response:'s', answer:'SMT'},
+            { stimulus1: 'img_mproj/jap/1.jpg' , stimulus2: "img_mproj/jap/2.jpg", txt: "<p>The two words/images were different. The correct response was 'D'. Click next to begin the task.</p>", correct_response:'d', answer:'DNT'}
+
+        ];
+        /* Fixation cross */
+        var fixation = {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: '<div style="font-size:60px;">+</div>',
+            choices: "NO_KEYS",
+            trial_duration: 300,
+            data: {
+                task: 'fixation'
+            }
+        };
+        /* Presenting TRIAL images 1 */
+        var test1 = {
+            type: jsPsychImageKeyboardResponse,
+            stimulus: jsPsych.timelineVariable('stimulus1'),
+            choices: "NO_KEYS",
+            trial_duration: 200,
+            data: {
+                task: 'stimuli_presentation_1'
+            }
+        };
+
+        /* Presenting TRIAL images 2 */
+        var test2 = {
+            type: jsPsychImageKeyboardResponse,
+            stimulus: jsPsych.timelineVariable('stimulus2'),
+            choices: "NO_KEYS",
+            trial_duration: 200,
+            data: {
+                task: 'stimuli_presentation_2'
+            }
+        };
+
+        /* Presenting collecting response text */
+        var resp_trial = {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: "<p> Press S if the two images were the same, Press D if the two images were different. </p>",
+            choices: ['s', 'd'],
+            data: {
+                task: 'response',
+                correct_response: jsPsych.timelineVariable('correct_response'),
+                category: jsPsych.timelineVariable('answer')
+            }
+        };
+
+
+        /* Presenting After TRIAL Response Text*/
+        var test_textbut = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: jsPsych.timelineVariable('txt'),
+            choices: ["Next"],
+            data: {
+                task: 'After_trial_text'
+            }
+        };
+
+        /* define TRIAL procedure */
+        var test_procedure = {
+            timeline: [test1, fixation, test2, resp_trial, test_textbut],
+            timeline_variables: test_stimuli
+        };
+
+        /*
+        ----------------------------------------
+        ACTUAL TASK BEGINS HERE
+        ----------------------------------------
+        */
+        const image_list=["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
+        var task_stimuli = [];
+
+        for (let i=0; i <image_list.length; i++)
+        {
+            //normal-same
+            item = image_list[i]
+            task_stimuli.push({pair1: "img_mproj/tools/"+item+".jpg", pair2: "img_mproj/tools/"+item+".jpg", answer: 'SNT', correct_response: 's'}) //tools
+            task_stimuli.push({pair1: "img_mproj/faces/"+item+".jpg", pair2: "img_mproj/faces/"+item+".jpg", answer: 'SNM', correct_response: 's'}) //faces
+            task_stimuli.push({pair1: "img_mproj/french/"+item+".jpg", pair2: "img_mproj/french/"+item+".jpg", answer: 'SNF', correct_response: 's'}) //french
+            task_stimuli.push({pair1: "img_mproj/jap/"+item+".jpg", pair2: "img_mproj/jap/"+item+".jpg", answer: 'SNJ', correct_response: 's'}) //japanese
+            task_stimuli.push({pair1: "img_mproj/false/"+item+".jpg", pair2: "img_mproj/false/"+item+".jpg", answer: 'SNP', correct_response: 's'}) //false words
+            //normal-different
+            const different = image_list.filter(difimage => difimage!=item)
+            const random_different = different[Math.floor(Math.random()*different.length)]
+            task_stimuli.push({pair1: "img_mproj/tools/"+item+".jpg", pair2: "img_mproj/tools/"+random_different+".jpg", answer: 'DNT', correct_response: 'd'}) //tools
+            task_stimuli.push({pair1: "img_mproj/faces/"+item+".jpg", pair2: "img_mproj/faces/"+random_different+".jpg", answer:'DNM', correct_response: 'd'}) //faces
+            task_stimuli.push({pair1: "img_mproj/french/"+item+".jpg", pair2: "img_mproj/french/"+random_different+".jpg", answer: 'DNF', correct_response: 'd'}) //french
+            task_stimuli.push({pair1: "img_mproj/jap/"+item+".jpg", pair2: "img_mproj/jap/"+random_different+".jpg", answer: 'DNJ', correct_response: 'd'}) //japanese
+            task_stimuli.push({pair1: "img_mproj/false/"+item+".jpg", pair2: "img_mproj/false/"+random_different+".jpg", answer: 'DNP', correct_response: 'd'}) //false words
+            //mirror-same
+            task_stimuli.push({pair1: "img_mproj/tools/"+item+".jpg", pair2: "img_mproj/Mtools/"+item+".jpg", answer: 'SMT', correct_response: 's' }) //tools
+            task_stimuli.push({pair1: "img_mproj/faces/"+item+".jpg", pair2: "img_mproj/Mfaces/"+item+".jpg", answer: 'SMM', correct_response: 's'})// faces
+            task_stimuli.push({pair1: "img_mproj/french/"+item+".jpg", pair2: "img_mproj/Mfrench/"+item+".jpg", answer: 'SMF', correct_response: 's'}) //french
+            task_stimuli.push({pair1: "img_mproj/jap/"+item+".jpg", pair2: "img_mproj/Mjap/"+item+".jpg", answer: 'SMJ', correct_response: 's'}) //japanese
+            task_stimuli.push({pair1: "img_mproj/false/"+item+".jpg", pair2: "img_mproj/Mfalse/"+item+".jpg", answer: 'SMP', correct_response: 's'}) //false words
+            //mirror-different
+            task_stimuli.push({pair1: "img_mproj/Mtools/"+item+".jpg", pair2: "img_mproj/Mtools/"+random_different+".jpg", answer: 'DMT', correct_response: 'd' }) //tools
+            task_stimuli.push({pair1: "img_mproj/Mfaces/"+item+".jpg", pair2: "img_mproj/Mfaces/"+random_different+".jpg", answer:'DMM', correct_response: 'd'}) // faces
+            task_stimuli.push({pair1: "img_mproj/Mfrench/"+item+".jpg", pair2: "img_mproj/Mfrench/"+random_different+".jpg", answer: 'DMF', correct_response: 'd'}) // french
+            task_stimuli.push({pair1: "img_mproj/Mjap/"+item+".jpg", pair2: "img_mproj/Mjap/"+random_different+".jpg", answer: 'DMJ', correct_response: 'd'}) // japanese
+            task_stimuli.push({pair1: "img_mproj/Mfalse/"+item+".jpg", pair2: "img_mproj/Mfalse/"+random_different+".jpg", answer: 'DMP', correct_response: 'd'}) // false words
+        }
+
+        /* Presenting TASK images 1 */
+        var actask1 = {
+            type: jsPsychImageKeyboardResponse,
+            stimulus: jsPsych.timelineVariable('pair1'),
+            choices: "NO_KEYS",
+            trial_duration: 200,
+            data: {
+                task: 'actual_stimuli_presentation_1'
+            }
+        };
+
+        /* Presenting TASK images 2 */
+        var actask2 = {
+            type: jsPsychImageKeyboardResponse,
+            stimulus: jsPsych.timelineVariable('pair2'),
+            choices: "NO_KEYS",
+            trial_duration: 200,
+            data: {
+                task: 'actual_stimuli_presentation_2'
+            }
+        };
+
+        /* define TASK procedure */
+        var task_procedure = {
+            timeline: [actask1, fixation, actask2, resp_trial],
+            timeline_variables: task_stimuli,
+            randomize_order: true
+        };
+
+
+        /*
+        ----------------------------------------
+        END OF TASK MESSAGES
+        ----------------------------------------
+        */
+
+        // Good Job message 
+        var good_job = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: `<p> Great job! You have finished the experiment. Click next to learn about the experiment. </p>`,
+            choices: [ 'Next']
+        };
+
+        // About task
+        var abt_task = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: `<p> The goal of the experiment was to replicate a study on mirror invariance which is a visual mechanism 
+            that allows recognition of mirror images. The study examines if mirror invariance is retained in adults and if 
+            mirror invariance is present for recognizing objects, faces, familiar, and nonfamiliar words. </p>`,
+            choices: [ 'Next']
+        };
+
+        // Contact Message
+
+        var contact_msg = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: `<p> Thank you for completing the experiment. Please email for stanfordpsych251@gmail.com any questions or concerns. </p>`,
+            choices: [ 'Finish']
+        };
+
+        /*
+        ---------------------------
+        TIMELINE PUSH
+        ---------------------------
+        */  
+
+        /* Push to end of timeline */
+        timeline.push(preload);
+        timeline.push(welcome);
+        //timeline.push(view_inst);
+        //timeline.push(task_inst);
+        //timeline.push(eg_view);
+        timeline.push(test_procedure);
+        timeline.push(task_procedure);
+
+        timeline.push(good_job);
+        timeline.push(abt_task);
+        timeline.push(contact_msg);
+
+        /* Run Timeline */
+        jsPsych.run(timeline);
+
+        
+  </script>
+</html>
