@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Neha Rajagopalan (Email ID: neharaj@stanford.edu)">
-<meta name="dcterms.date" content="2023-10-22">
+<meta name="dcterms.date" content="2024-06-21">
 
 <title>Replication of - Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al. (2009, NeuroImage)</title>
 <style>
@@ -20,6 +20,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -2998,7 +3032,9 @@ vertical-align: -.125em;
   <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
   <li><a href="#links-to-repository-and-original-paper" id="toc-links-to-repository-and-original-paper" class="nav-link" data-scroll-target="#links-to-repository-and-original-paper">Links to repository and original paper</a></li>
   <li><a href="#links-to-replication-project-repository-and-experiment-paradigm" id="toc-links-to-replication-project-repository-and-experiment-paradigm" class="nav-link" data-scroll-target="#links-to-replication-project-repository-and-experiment-paradigm">Links to replication project repository and experiment paradigm:</a></li>
+  <li><a href="#link-to-current-replication-study-experiment-paradigm-and-pilot-a-data-analysis" id="toc-link-to-current-replication-study-experiment-paradigm-and-pilot-a-data-analysis" class="nav-link" data-scroll-target="#link-to-current-replication-study-experiment-paradigm-and-pilot-a-data-analysis">Link to current replication study experiment paradigm and Pilot A data analysis:</a></li>
   </ul></li>
+  <li><a href="#comments-and-feedback-on-pilot-a-data-and-analysis" id="toc-comments-and-feedback-on-pilot-a-data-and-analysis" class="nav-link" data-scroll-target="#comments-and-feedback-on-pilot-a-data-and-analysis">Comments and feedback on pilot A data and analysis:</a></li>
   <li><a href="#summary-of-prior-replication-attempt" id="toc-summary-of-prior-replication-attempt" class="nav-link" data-scroll-target="#summary-of-prior-replication-attempt">Summary of prior replication attempt</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
@@ -3048,7 +3084,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 22, 2023</p>
+      <p class="date">June 21, 2024</p>
     </div>
   </div>
   
@@ -3072,7 +3108,7 @@ vertical-align: -.125em;
 </section>
 <section id="challenges" class="level3">
 <h3 class="anchored" data-anchor-id="challenges">Challenges</h3>
-<p>The target population is adults with a mean age of 23 years. The original task was, however, conducted on French and Japanese participants. One challenge, I can foresee, is making the choice between maintaining the cultural context (which might make recruiting participants difficult and generating language target stimuli time consuming) and opening the study to all participants sans cultural segregation. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror invariance in adults.</p>
+<p>The target population is adults with a mean age of 23 years. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror invariance in adults and this might be difficult given the time constraint for data collection. Some other challenges include deployment of the experiment paradigm and adding breaks between trials (block structure) to reduce cognitive load for participants.</p>
 </section>
 <section id="links-to-repository-and-original-paper" class="level3">
 <h3 class="anchored" data-anchor-id="links-to-repository-and-original-paper">Links to repository and original paper</h3>
@@ -3084,6 +3120,24 @@ vertical-align: -.125em;
 <p><a href="https://github.com/psych251/dehaene2009">Link to replication project repository</a><br>
 <a href="https://psych251.github.io/dehaene2009/">Link to experiment paradigm</a></p>
 </section>
+<section id="link-to-current-replication-study-experiment-paradigm-and-pilot-a-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="link-to-current-replication-study-experiment-paradigm-and-pilot-a-data-analysis">Link to current replication study experiment paradigm and Pilot A data analysis:</h3>
+<p><a href="https://github.com/psych251/dehaene2009_rescue/blob/main/writeup/PilotA_task/proj_script.html">Link to experiment paradigm</a><br>
+<a href="https://github.com/psych251/dehaene2009_rescue/blob/main/writeup/PilotA_task/DataAnalysisScript.Rmd">Link to pilot data analysis script</a></p>
+</section>
+</section>
+<section id="comments-and-feedback-on-pilot-a-data-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="comments-and-feedback-on-pilot-a-data-and-analysis">Comments and feedback on pilot A data and analysis:</h2>
+<ol type="1">
+<li>Pilot A data was collected on 2 non-naive participants.</li>
+<li>The data analysis pipeline coded below works on the collected pilot data.</li>
+<li>Feedback for pilot A:
+<ol type="a">
+<li>Request to increase the time of presentation of stimuli to be able to process the image, especially for words.</li>
+<li>The target buttons ‘s’ and ‘d’ are next to each other. This was helpful to quickly respond but also was the reason for error. If one button for ‘same’ target was to the right of the keyboard and the other target button for ‘different’ was on the left side of the keyboard, the usage of right and left hand to touch the target buttons would be helpful to differentiate between the two targets and reduce error in response.</li>
+</ol></li>
+<li>I was unable to implement the 10 block structure mentioned in the Control section of the document. This was an addition to the original replication and may or may not be helpful for the current replication. It will be implemented in further iterations.</li>
+</ol>
 </section>
 <section id="summary-of-prior-replication-attempt" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-prior-replication-attempt">Summary of prior replication attempt</h2>
@@ -3099,17 +3153,15 @@ vertical-align: -.125em;
 </section>
 <section id="planned-sample" class="level3">
 <h3 class="anchored" data-anchor-id="planned-sample">Planned Sample</h3>
-<p>The rescue project will increase the sample size to 40 participants and exclude the cultural context between Japanese and French participants by opening the study to a global population.</p>
+<p>The rescue project will increase the sample size to 40 participants. The mean age of participants will also be modified to 23 years similar to the original study.</p>
 </section>
 <section id="materials" class="level3">
 <h3 class="anchored" data-anchor-id="materials">Materials</h3>
 <p>“All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters). French and Japanese words were matched on frequency (mean Log10 frequency = 1.14 versus 0.90, n.s.).” - Pg 1846</p>
-<p>The French and Japanese words will be substituted with English words to maintain uniformity for cultural contexts. The other rules for stimuli presentation will be maintained in the current study.</p>
 </section>
 <section id="procedure" class="level3">
 <h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
 <p>“The stimuli for the behavioral same-different task, performed after fMRI, were 14 French words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, 14 unknown script stimuli, and their corresponding left–right reversed mirror images. On each trial, two stimuli from the same category were successively presented at the fixation (200 ms presentation of each image, 300 ms inter-stimulus interval with fixation cross). The participant’s task was to decide whether the two stimuli depicted the same object, possibly in mirror- form. Thus, the participants had to respond “same” both to physically identical stimuli (1/4 of trials) and to mirror images (1/4 of trials). They had to respond “different” whenever the stimuli were unrelated, whether they were in the same orientation (e.g. two normally oriented words; two faces in the same orientation; 1/4 of trials), or whether they were in different orientations (e.g. one word followed by a mirror image of a word). The first stimulus, drawn from one of the five categories, was always in standard orientation, and the second stimulus was defined by a 2 × 2 factorial design with factors of identity (same or different object) and orientation (same or different left– right orientation). This design defined a list of 14 × 5 × 2 × 2 = 280 trials, which were run once in random order.” - Pg 1846</p>
-<p>The differences for the rescue study includes using four categories instead of five by merging the French words and Japanese characters categories as one category consisting of English words. Therefore the number of trials will reduce to 14 x 4 x 2 x 2 = 224 trials.</p>
 </section>
 <section id="controls" class="level3">
 <h3 class="anchored" data-anchor-id="controls">Controls</h3>
@@ -3119,7 +3171,6 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h3>
 <p>Similar to the original study and the replication report, the following analysis plan will be conducted:</p>
 <p>“The following analysis plan will be followed from the study: Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts).”</p>
-<p>The five categories will be substitued with four categories (English, tools, faces, and false fonts).</p>
 <!--**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.-->
 </section>
 <section id="differences-from-original-study-and-1st-replication" class="level3">
@@ -3144,6 +3195,191 @@ vertical-align: -.125em;
 <section id="data-preparation" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation">Data preparation</h3>
 <p>The replication report cleaned the raw data (added a column) by clearly indicating whether the stimuli pairs were mirror imaged or normally oriented.Preprocessing of data was completed prior to the anlaysis to obtain required rows and columns for the mirror invariance task.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Data Preparation</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">#### Load Relevant Libraries and Functions</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### Import data</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df.participant1 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;PilotA_task/PilotA_Data/pilotA_data.csv&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">18</span><span class="sc">:</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1140 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (12): failed_images, failed_audio, failed_video, trial_type, internal_no...
+dbl  (2): trial_index, time_elapsed
+lgl  (2): success, timeout
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.participant2 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;PilotA_task/PilotA_Data/pilotA_data1.csv&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">18</span><span class="sc">:</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1140 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (12): failed_images, failed_audio, failed_video, trial_type, internal_no...
+dbl  (2): trial_index, time_elapsed
+lgl  (2): success, timeout
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.participant <span class="ot">=</span> <span class="fu">rbind</span>(df.participant1, df.participant2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.participant</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,246 × 16
+   success timeout failed_images failed_audio failed_video trial_type           
+   &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;                
+ 1 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         image-keyboard-respo…
+ 2 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         html-keyboard-respon…
+ 3 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         image-keyboard-respo…
+ 4 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         html-keyboard-respon…
+ 5 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         image-keyboard-respo…
+ 6 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         html-keyboard-respon…
+ 7 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         image-keyboard-respo…
+ 8 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         html-keyboard-respon…
+ 9 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         image-keyboard-respo…
+10 NA      NA      &lt;NA&gt;          &lt;NA&gt;         &lt;NA&gt;         html-keyboard-respon…
+# ℹ 2,236 more rows
+# ℹ 10 more variables: trial_index &lt;dbl&gt;, time_elapsed &lt;dbl&gt;,
+#   internal_node_id &lt;chr&gt;, view_history &lt;chr&gt;, rt &lt;chr&gt;, stimulus &lt;chr&gt;,
+#   response &lt;chr&gt;, task &lt;chr&gt;, correct_response &lt;chr&gt;, category &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Data exclusion / filtering</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df.response <span class="ot">=</span> df.participant <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(rt, stimulus, response, task, correct_response, category) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(correct_response)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(stimulus))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>df.response</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 560 × 5
+   rt    response task     correct_response category
+   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;   
+ 1 570   d        response d                DNF     
+ 2 722   s        response d                DMT     
+ 3 686   d        response d                DMT     
+ 4 575   s        response s                SMT     
+ 5 363   d        response d                DMM     
+ 6 600   d        response d                DMJ     
+ 7 425   d        response d                DNT     
+ 8 406   d        response s                SMP     
+ 9 1097  d        response d                DNM     
+10 530   d        response s                SMP     
+# ℹ 550 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we filter for responses that have a response time between 100ms and 2000ms</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.correct <span class="ot">=</span> df.response <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(rt) <span class="sc">&gt;=</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(rt) <span class="sc">&lt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we filter correct responses</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response <span class="sc">==</span> correct_response) </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>df.correct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 485 × 5
+   rt    response task     correct_response category
+   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;   
+ 1 570   d        response d                DNF     
+ 2 686   d        response d                DMT     
+ 3 575   s        response s                SMT     
+ 4 363   d        response d                DMM     
+ 5 600   d        response d                DMJ     
+ 6 425   d        response d                DNT     
+ 7 1097  d        response d                DNM     
+ 8 410   s        response s                SMM     
+ 9 373   s        response s                SNF     
+10 1033  s        response s                SMM     
+# ℹ 475 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Prepare data for analysis - create columns etc.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df.correct<span class="sc">$</span>SDNM <span class="ot">=</span> <span class="fu">substr</span>(df.correct<span class="sc">$</span>category, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df.correct<span class="sc">$</span>group <span class="ot">=</span> <span class="fu">substr</span>(df.correct<span class="sc">$</span>category, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df.correct <span class="ot">=</span> df.correct <span class="sc">%&gt;%</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(category))</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>df.correct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 485 × 6
+   rt    response task     correct_response SDNM  group
+   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt;
+ 1 570   d        response d                DN    F    
+ 2 686   d        response d                DM    T    
+ 3 575   s        response s                SM    T    
+ 4 363   d        response d                DM    M    
+ 5 600   d        response d                DM    J    
+ 6 425   d        response d                DN    T    
+ 7 1097  d        response d                DN    M    
+ 8 410   s        response s                SM    M    
+ 9 373   s        response s                SN    F    
+10 1033  s        response s                SM    M    
+# ℹ 475 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Data analysis</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">##Median RT##</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>median_rt <span class="ot">=</span> df.correct <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group, SDNM)<span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_rt =</span> <span class="fu">median</span>(<span class="fu">as.numeric</span>(rt), <span class="at">na.rm =</span><span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by &#39;group&#39;. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>median_rt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 3
+# Groups:   group [5]
+   group SDNM  median_rt
+   &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;
+ 1 F     DM         799 
+ 2 F     DN         607 
+ 3 F     SM         585 
+ 4 F     SN         474 
+ 5 J     DM         598 
+ 6 J     DN         692 
+ 7 J     SM         656.
+ 8 J     SN         538 
+ 9 M     DM         652.
+10 M     DN         652.
+11 M     SM         418.
+12 M     SN         488.
+13 P     DM         662.
+14 P     DN         785 
+15 P     SM         730.
+16 P     SN         503 
+17 T     DM         701 
+18 T     DN         534 
+19 T     SM         494.
+20 T     SN         404.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Anova analysis</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>anova_results <span class="ot">&lt;-</span> <span class="fu">aov</span>(median_rt<span class="sc">$</span>median_rt <span class="sc">~</span> median_rt<span class="sc">$</span>group)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                Df Sum Sq Mean Sq F value Pr(&gt;F)
+median_rt$group  4  49251   12313   0.916   0.48
+Residuals       15 201720   13448               </code></pre>
+</div>
+</div>
 </section>
 <section id="results-of-control-measures" class="level3">
 <h3 class="anchored" data-anchor-id="results-of-control-measures">Results of control measures</h3>

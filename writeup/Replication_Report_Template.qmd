@@ -21,7 +21,7 @@ As a PhD student in Developmental and Psychological Sciences at the Graduate Sch
 The behavioral task (called the “same-different” task) involves presenting 14 french words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, and 14 unknown scripts (all black and white) as visual stimuli along with their left-right reversed mirror images. Each trial displays two images from the same category at a fixation position with 200ms of presentation and 300ms of inter-stimulus interval. The participant responds with “same” to the pair of images if they are physically identical (eg. same word both in normal orientation or mirrored) and “different” if they are either unrelated (eg. two different words from the same category) or differently oriented (eg. word followed by mirrored orientation). 
 
 ### Challenges
-The target population is adults with a mean age of 23 years. The original task was, however, conducted on French and Japanese participants. One challenge, I can foresee, is making the choice between maintaining the cultural context (which might make recruiting participants difficult and generating language target stimuli time consuming) and opening the study to all participants sans cultural segregation. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror invariance in adults. 
+The target population is adults with a mean age of 23 years. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror invariance in adults and this might be difficult given the time constraint for data collection. Some other challenges include deployment of the experiment paradigm and adding breaks between trials (block structure) to reduce cognitive load for participants.
 
 ### Links to repository and original paper
 [Link to github repository](https://github.com/psych251/dehaene2009_rescue)  
@@ -32,8 +32,8 @@ The target population is adults with a mean age of 23 years. The original task w
 [Link to experiment paradigm](https://psych251.github.io/dehaene2009/)
 
 ### Link to current replication study experiment paradigm and Pilot A data analysis:
-[Link to experiment paradigm]()
-[Link to pilot data, and analysis script]()
+[Link to experiment paradigm](https://github.com/psych251/dehaene2009_rescue/blob/main/writeup/PilotA_task/proj_script.html)  
+[Link to pilot data analysis script](https://github.com/psych251/dehaene2009_rescue/blob/main/writeup/PilotA_task/DataAnalysisScript.Rmd)
 
 ## Comments and feedback on pilot A data and analysis:
 
@@ -42,6 +42,7 @@ The target population is adults with a mean age of 23 years. The original task w
 3. Feedback for pilot A:
     a. Request to increase the time of presentation of stimuli to be able to process the image, especially for words. 
     b. The target buttons 's' and 'd'  are next to each other. This was helpful to quickly respond but also was the reason for error. If one button for 'same' target was to the right of the keyboard and the other target button for 'different' was on the left side of the keyboard, the usage of right and left hand to touch the target buttons would be helpful to differentiate between the two targets and reduce error in response.
+4. I was unable to implement the 10 block structure mentioned in the Control section of the document. This was an addition to the original replication and may or may not be helpful for the current replication. It will be implemented in further iterations.
 
 ## Summary of prior replication attempt
 
@@ -58,7 +59,7 @@ How much power does your planned sample have for original effect? For an attenua
 
 ### Planned Sample
 
-The rescue project will increase the sample size to 40 participants and exclude the cultural context between Japanese and French participants by opening the study to a global population. 
+The rescue project will increase the sample size to 40 participants. The mean age of participants will also be modified to 23 years similar to the original study. 
 
 ### Materials
 "All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters). French and Japanese words were matched on frequency (mean Log10 frequency = 1.14 versus 0.90, n.s.)." - Pg 1846
@@ -107,7 +108,7 @@ You can comment this section out prior to final report with data collection.
 The replication report cleaned the raw data (added a column) by clearly indicating whether the stimuli pairs were mirror imaged or normally oriented.Preprocessing of data was completed prior to the anlaysis to obtain required rows and columns for the mirror invariance task.
 	
 ```{r include=T}
-### Data Preparation
+### Data Preparation (Pilot A)
 
 
 #### Load Relevant Libraries and Functions
