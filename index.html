@@ -25,6 +25,7 @@
 
                 // COLLECT RESPONSES IN PROLIFERATE
                 proliferate.submit({"trials": data.values()});
+                window.location = "https://app.prolific.com/submissions/complete?cc=CFMBGQ9S";
             }
         }); 
 
@@ -437,10 +438,9 @@
         // Contact Message
 
         var contact_msg = {
-            type: jsPsychHtmlKeyboardResponse,
-            stimulus: `<p> Thank you for completing the experiment. Please email stanfordpsych251@gmail.com for any questions or concerns. </p>
-            <p><a href="https://app.prolific.com/submissions/complete?cc=CFMBGQ9S">Click here to return to Prolific and complete the study</a>.</p>`,
-            choices: [ 'NO_KEYS']
+            type: jsPsychHtmlButtonResponse,
+            stimulus: `<p> Thank you for completing the experiment. Please email stanfordpsych251@gmail.com for any questions or concerns. </p>`,
+            choices: [ 'Finish']
         };
 
         /*
