@@ -28,6 +28,23 @@
             }
         }); 
 
+         /*
+        ------------------------------------------
+        ADD SUBJECT_ID IN PROLIFIC DATA
+        ------------------------------------------
+        */
+
+        // capture info from Prolific
+        var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+        var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+        var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+
+        jsPsych.data.addProperties({
+            subject_id: subject_id,
+            study_id: study_id,
+            session_id: session_id
+        });
+
         /* Timeline array holding stimuli*/
         var timeline = [];
 
@@ -195,16 +212,8 @@
             show_progress_bar: true
         };
 
-        /*
-        ------------------------------------------
-        ADD SUBJECT_ID IN PROLIFIC DATA
-        ------------------------------------------*/
+       
 
-        var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
-
-        jsPsych.data.addProperties({
-            subject_id: subject_id
-        });
 
         /*
         -------------------------------------------
@@ -428,9 +437,10 @@
         // Contact Message
 
         var contact_msg = {
-            type: jsPsychHtmlButtonResponse,
-            stimulus: `<p> Thank you for completing the experiment. Please email stanfordpsych251@gmail.com for any questions or concerns. </p>`,
-            choices: [ 'Finish']
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: `<p> Thank you for completing the experiment. Please email stanfordpsych251@gmail.com for any questions or concerns. </p>
+            <p><a href="https://app.prolific.com/submissions/complete?cc=CFMBGQ9S">Click here to return to Prolific and complete the study</a>.</p>`,
+            choices: [ 'NO_KEYS']
         };
 
         /*
