@@ -1,0 +1,174 @@
+---
+title: "PSYCH 251: Replication Project Data Analysis Script"
+author: "Neha Rajagopalan"
+date: "2024-12-07"
+output: html_document
+---
+
+## Data Loading, Cleaning and Filtering
+
+### Loading Libraries
+
+```{r}
+library("tidyverse")
+library("dplyr")
+```
+### Reading response data of participants
+
+```{r}
+df.participants = read_csv("Final_Data/mirror_invariance_in_adults-trials.csv") 
+df.participants
+```
+
+### Reading demographic data and workerid_participant_id data to match language of participants in the earlier loaded response data
+
+```{r}
+df.work = read_csv("Final_Data/mirror_invariance_in_adults-workerids.csv") 
+df.work = df.work %>% 
+  rename(participantid = prolific_participant_id)
+df.demog = read_csv("Final_Data/Demo_data.csv")
+df.demog = df.demog %>%
+  rename(participantid = `Participant id`)
+```
+
+```{r}
+### Joining the language 
+df.combined_data <- df.work %>%
+  inner_join(df.demog, by = "participantid") %>% # Join on 'participantid'
+  inner_join(df.participants, by = "workerid")    
+
+```
+
+
+```{r}
+colnames(df.combined_data)
+```
+
+### Selecting relevant columns,filtering out 1-17 trials in every participants, NA values in correct_response 
+```{r}
+df.response = df.combined_data %>%
+  select(workerid, category, correct_response, response, rt, stimulus, trial_index, task, Language) %>%
+  filter(as.numeric(trial_index) >= 17) %>%
+  filter(!is.na(correct_response)) %>%
+  select(-c(stimulus))
+```
+
+### Removing participants with correct response accuracy less than 80%
+```{r}
+# Number of trials for each participant is 280
+accpercent = df.response %>% 
+  group_by(workerid) %>%
+  count(accuracy = response == correct_response) %>%
+  mutate(percentage = n/280) %>%
+  filter(accuracy == TRUE & percentage >= 0.8)
+  
+df.response = df.response %>% 
+  filter(workerid %in% accpercent$workerid)
+
+```
+
+
+
+
+# Here we filter for responses that have a response time between 100ms and 2000ms
+```{r}
+df.correct = df.response %>%
+  filter(as.numeric(rt) >= 100) %>%
+  filter(as.numeric(rt) <= 2000) %>%
+# Here we filter correct responses
+  filter(response == correct_response) 
+
+```
+Key for category codes:
+
+Format: Same/Different(S/D) image | Mirror/Normal(M/N) orientation | French/Japanese/Faces/False/Tools (F/J/M/P/T) group
+
+1. DMF - Different Mirror French
+2. DMJ - Different Mirror Japanese
+3. DMM - Different Mirror Faces
+4. DMP - Different Mirror False
+5. DMT - Different Mirror Tools
+6. DNF - Different Normal French
+7. DNJ - Different Normal Japanese
+8. DNM - Different Normal Faces
+9. DNP - Different Normal False
+10. DNT - Different Normal Tools
+11. SMF - Same Mirror French
+12. SMJ - Same Mirror Japanese
+13. SMM - Same Mirror Faces
+14. SMP - Same Mirror False
+15. SMT - Same Mirror Tools
+16. SNF - Same Normal French
+17. SNJ - Same Normal Japanese
+18. SNM - Same Normal Faces
+19. SNP - Same Normal False
+20. SNT - Same Normal Tools
+
+
+### Split category column into Group Categories (Japanese, French, Faces, False, Tools) and Same/Different - Mirror/Normal Categories
+```{r}
+df.correct$SDNM = substr(df.correct$category, 1, 2)
+df.correct$group = substr(df.correct$category, 3, 3)
+
+df.correct = df.correct %>%
+  select(-c(category))
+```
+
+## Data Analysis Script 
+
+### Median correct response times summary and Category codes
+```{r}
+median_rt = df.correct %>%
+  group_by(group, workerid, SDNM, Language)%>%
+  summarise(median_rt = median(as.numeric(rt), na.rm =FALSE))
+
+median_rt
+```
+
+
+
+### ANOVA for median response times: 
+
+```{r}
+anova_results <- aov(median_rt$median_rt ~ median_rt$group)
+summary(anova_results)
+```
+
+
+## Demographic data analysis
+```{r}
+df.demo = read_csv("Final_Data/Demo_data.csv")
+df.demo
+```
+
+### Filtering out rejected participants with no data
+```{r}
+# We take the rejected participants from proliferate and remove those from the dataframe
+accepted_participants = df.demo %>%
+  filter(!grepl('5ea56a37dbbd77000af66e9e|5c75c0b13348af0001919592|615838a2d65d6be56cc96091|66a8f239f705eed353903370|6638475c16075573c250c80e|671a870c66175bebdf56e4b6|5783a5316475d400015a8d18|65c419a59cef6ec7abc3e0d4|66ee10b90dbf66b430e78637|5d617ba9364f9a0019f1dac3|56b3edf12bac74000d89e452|656d2042d97ccb36012973b8|6643f4b1e70df88c267ceb30|5e8e1edf8ee4fe0c495a1eac|613233c42e11150d68da93f9|5aea8ea1a110a00001f7e6a9|66d22ee36b6097325ece6d4c|66e1c61ff5886e70ecfde1a6|61087f79f6d4d19cf7329aaf|66b4266f6dfc31cac3e52102|5f6c2cc435b14b0109346513|66957d30f84305d987b4e31f|602d82b9151d507f7ecebfd0|5a19b5076e1ea9000124f940', `Participant id`))
+
+
+```
+
+### Mean age calculation of participants
+```{r}
+mean_age = mean(as.numeric(accepted_participants$Age))
+mean_age
+```
+
+### Counting number of Japanese and French participants
+```{r}
+accepted_participants %>% count(Language)
+  
+```
+
+
+
+
+
+<!-- ###Checking for missing participant -->
+```{r}
+#df.miss = read_csv("/Users/neharajagopalan/STANFORD_PHD/Fall23/PSYCH_251/test_data/mirror_invariance_in_adults-workerids.csv")
+#new1 = df.miss %>% filter(!grepl('5b2dff9daca2940001423c73|5c60a763dff4b30001aa98ee|5c7dd8e0665aaa001230a6c7|5c81797a5bb27200013c7b1b|5d164f9b1a4be700176367bd|5d9fae684bf6c600144e673b|5e29fd5f2bec3b065e9a729e|5e3b31169c771734a5ac8226|5e440e4f19962228cf949247|5eb7031b5e4ac262cd77c949|5efbce484cee781856fc95ef|5f5c4edce87688224b1048ce|5f61151aead6a006ebe2747b|5f69bca68bd61e01afde8d9b|60707b6c787387f279f4da5c|60914f0c377808b52e7594ce|60ceeec3a0bed4a1e603b8d7|6101151ea206210140711990|61519988b1ae1bd33e03675a|6157684f2013e9ab8cb238e2|651035ad2ada965a5c9c87ab|65366f6aa09a5f7a5f193f61|654e9cd39c85c318df8606da|6553a7fdcb372050cab6035c|655dce890f82eccc49211e80|659f0a8f22928eebdc204d57|65cce024500351e8c8f7ff26|6605c26803e0ed0bb5cdd951|662c45399d952aa04fd2bf4f|66368ac547b8824e50cfa854|665e1c4a3ecc2a4e6ace07f9|66703d4a7436b1c576ba4a8c|66799be9ea1183434ff60ca5|667dd23ef327afa96cf9cfdc|66869ffdfbb0e002547a2c8c|6689608c847a9640d0ff50d7|668caa754fe5c9ee3a6081ec|66bd8d2bf62eeef235e8e984|66c4a3da2faac6abe33860ec|6708351015e39ff2541e5dc4|6716af9803edcbcd7b043151|67186ee913eaa9cba9c2b27b',prolific_participant_id))
+```
+

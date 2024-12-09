@@ -1,0 +1,259 @@
+---
+title: "Replication of - Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al. (2009, NeuroImage)"
+author: "Neha Rajagopalan (Email ID: neharaj@stanford.edu)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+format:
+  html:
+    toc: true
+    toc_depth: 3
+---
+
+
+## Introduction
+Mirror invariance refers to the phenomenon of differentiating mirror images from normally oriented images. It is known that mirror invariance occurs in children during reading and writing. The original study of this rescue project by Dehaene et al. aimed at investigating if this effect is retained in adults for reading and writing. Results show that recognition of mirror orientations occur only for images and not words.
+
+The replication project of this paper attempted to replicate these results by conducting an ANOVA on median response times of correct responses obtained in the "Same-Different" behavioral task of the original paper. The study was able to replicate the category effect on median correct response times but was unsuccessful while replicating whether mirror invariance occurs only for images and not in scripts. Through this rescue project, I would like to modify the replication project's experiment design and verify if the original study is replicable with this new approach.
+
+
+### Justification
+As a PhD student in Developmental and Psychological Sciences at the Graduate School of Education, I am constantly thinking about methods to study underlying neural and behavioral changes that occur during learning in children and adults. Given my interests, I believe that the current chosen topic aligns perfectly with my goal to expand knowledge in education psychology and learn appropriate scientific reporting of results. The paper by Dehaene et al. discusses the disappearance of the “mirror effect” (i.e. writing words from right to left while children learn to read and write) in adults and further investigates a higher presence of mirror generalization for pictures than words through a behavioral task conducted in an fMRI scanner. In the past, I have explored literature in auditory processing and narratives for learning. Through this rescue project, however, I intend to be introduced to experiment design, priming effects and analysis metrics used in visual mechanism studies.
+
+### Stimuli and Procedure
+The behavioral task (called the “same-different” task) involves presenting 14 french words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, and 14 unknown scripts (all black and white) as visual stimuli along with their left-right reversed mirror images. Each trial displays two images from the same category at a fixation position with 200ms of presentation and 300ms of inter-stimulus interval. The participant responds with “same” to the pair of images if they are physically identical (eg. same word both in normal orientation or mirrored) and “different” if they are either unrelated (eg. two different words from the same category) or differently oriented (eg.different word followed by mirrored orientation). 
+
+### Challenges
+The target population is adults with a mean age of 23 years. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror invariance in adults and this might be difficult given the time constraint for data collection.
+
+### Links to repository and original paper
+[Link to github repository](https://github.com/psych251/dehaene2009_rescue)  
+[Link to original paper in repository](https://github.com/psych251/dehaene2009_rescue/blob/main/original_paper/Dehaene2009_original_paper.pdf)
+
+### Links to replication project repository and experiment paradigm:
+[Link to replication project repository](https://github.com/psych251/dehaene2009)  
+[Link to experiment paradigm](https://psych251.github.io/dehaene2009/)
+
+### Link to current replication study experiment paradigm:
+[Link to experiment paradigm](https://psych251.github.io/dehaene2009_rescue/)
+
+## Summary of prior replication attempt
+Although the original study consisted of an fMRI task and a behavioral task to investigate mirror invariance in adults, the prior replication study replicated the 'Same-Different' behavioral task only due to time and resource constraints. The first replication study used the same experiment design as the original study and conducted the following analysis similar to the original study: 
+
+"Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts)."
+
+
+## Methods
+### Power Analysis
+The original study fails to talk about effect size due to which the replication project eliminates a power analysis. The replication project does not mention effect size either. Hence a power analysis will not be conducted in this project as well. 
+
+### Planned Sample
+The rescue project plans to increase the sample size to 64 participants with 32 Japanese and 32 French participants who are all right-handed. The mean age of participants will also be modified to 23 years similar to the original study. 
+
+### Materials
+"All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters). French and Japanese words were matched on frequency (mean Log10 frequency = 1.14 versus 0.90, n.s.)." - Pg 1846
+
+
+### Procedure	
+
+"The stimuli for the behavioral same-different task, performed after fMRI, were 14 French words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, 14 unknown script stimuli, and their corresponding left–right reversed mirror images. On each trial, two stimuli from the same category were successively presented at the fixation (200 ms presentation of each image, 300 ms inter-stimulus interval with fixation cross). The participant's task was to decide whether the two stimuli depicted the same object, possibly in mirror- form. Thus, the participants had to respond “same” both to physically identical stimuli (1/4 of trials) and to mirror images (1/4 of trials). They had to respond “different” whenever the stimuli were unrelated, whether they were in the same orientation (e.g. two normally oriented words; two faces in the same orientation; 1/4 of trials), or whether they were in different orientations (e.g. one word followed by a mirror image of a word). The first stimulus, drawn from one of the five categories, was always in standard orientation, and the second stimulus was defined by a 2 × 2 factorial design with factors of identity (same or different object) and orientation (same or different left– right orientation). This design defined a list of 14 × 5 × 2 × 2 = 280 trials, which were run once in random order." - Pg 1846
+
+
+### Analysis Plan
+
+Similar to the original study and the replication report, the following analysis plan will be conducted:
+
+"The following analysis plan will be followed from the study: Median correct response times were analyzed using an ANOVA with group(language) as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts)."
+
+### Differences from Original Study and 1st replication
+
+Based on a preliminary comparison between the original report and the first replication, there are no differences in sample size, method and analysis. Since the original study included an fMRI task, the study was conducted in-person as opposed to the replication study that collected behavioral data online. Due to this difference, participants did not have any exposure to same-different task in the replication study while they did during the original study. The original study had a final mean age of 23 years across participants but the replication study had a mean age of 36 years. The replication attempt was only partially successful since the author obtained results that were both consistent (median correct response times ANOVA) and inconsistent (additional means of correct median response times ANOVA) with the original report.
+
+The original study does not mention any methods of exclusion criteria or insertion of attention checks, whereas the replication study added the exclusion criteria since it was an online study (as opposed to the original study that was conducted in-person). The exclusion criteria included removal of trials that had a response time lesser than 100ms or greater than 2000ms. Further, participants with a response accuracy lesser than 80% were removed from the analysis. Finally, the replication projects uses different images than the images used in the original study. However, the images still pertain to the 5 categories mentioned in the original study.
+
+The main difference between the replication project and the current rescue project is the increase in sample size for the same analysis. The replication project chooses only 23 participants while this project proposes 64 participants. The other difference is during the analysis phase. The replication project first eliminates trials based on response times (removing trials less than 100 ms and greater than 2000ms) and then removes participants with a response accuracy less than 80%. The current rescue project, however, removes participants based on response accuracy first and then removes trials based on response times. 
+
+### Methods Addendum (Post Data Collection)
+
+<!--You can comment this section out prior to final report with data collection.-->
+
+#### Actual Sample
+Out of the proposed 64 participant sample, only 43 completed the experiment. Out of these 43 participants, 21 were French and 22 were Japanese participants. The mean age was 37.93 years as opposed to the proposed 23 years.
+
+#### Differences from pre-data collection methods plan
+  None 
+
+## Results
+
+### Data preparation
+
+The replication report cleaned the raw data (added a column) by clearly indicating whether the stimuli pairs were mirror imaged or normally oriented. This was a separate step since data collection did not include this differentiation. Preprocessing of data was completed prior to the anlaysis to obtain required rows and columns for the mirror invariance task based on exclusion criteria and image categorization.
+
+The current rescue project modifies the replication project data preparation by explicitly mentioning the image category and the orientation (mirror or normal) during the data collection step rather than during the data cleaning step. 
+
+### Confirmatory analysis
+The analysis for the ANOVA on median correct response times is as follows: 
+
+<!-- The replication study conducted ANOVA and found that category the effect on mean correct response times was significant (p=0.04708) and consistent with the original study. The author also ran an additional ANOVA to compare means of categories between each other but did not observe significant results (inconsistent with original study). -->
+
+1. First we load libraries:
+```{r include=T}
+#### Load Relevant Libraries and Functions
+library("tidyverse")
+library("dplyr")
+library("forcats")
+library("ggplot2")
+library("emmeans")
+
+```
+
+2. Next, we import the data on workerid-prolific_participantid, demographics (language of participants), and responses and combine them.
+```{r include=T}
+#### Import data
+df.participants = read_csv("Final_Data/mirror_invariance_in_adults-trials.csv") 
+df.work = read_csv("Final_Data/mirror_invariance_in_adults-workerids.csv") 
+df.work = df.work %>% 
+  rename(participantid = prolific_participant_id)
+df.demog = read_csv("Final_Data/Demo_data.csv")
+df.demog = df.demog %>%
+  rename(participantid = `Participant id`)
+
+### Joining the language data
+df.combined_data <- df.work %>%
+  inner_join(df.demog, by = "participantid") %>% # Join on 'participantid'
+  inner_join(df.participants, by = "workerid")   
+
+```
+
+3. Data filtering and exclusion: We clean the data to obtain only relevant columns and response trials. Next, we remove participants with an response accuracy lesser than 80% and the response time lesser than 100ms or greater than 2000ms
+```{r include=T}
+
+#### Data filtering
+
+df.response = df.combined_data %>%
+  select(workerid, category, correct_response, response, rt, stimulus, trial_index, task, Language) %>%
+  filter(as.numeric(trial_index) >= 17) %>%
+  filter(!is.na(correct_response)) %>%
+  select(-c(stimulus))
+
+### Data exclusion 1: Removing participants with less than 80% accuracy of responses
+accpercent = df.response %>% 
+  group_by(workerid) %>%
+  count(accuracy = response == correct_response) %>%
+  mutate(percentage = n/280) %>%           # Number of trials for each participant = 280
+  filter(accuracy == TRUE & percentage >= 0.8)
+  
+df.response = df.response %>% 
+  filter(workerid %in% accpercent$workerid)
+
+### Data exclusion 2:Removing trials with response time less than 100ms or greater than 2000ms
+df.correct = df.response %>%
+  filter(as.numeric(rt) >= 100) %>%
+  filter(as.numeric(rt) <= 2000) %>%
+# Here we filter correct responses
+  filter(response == correct_response) 
+
+```
+
+4. Data preparation for median response time ANOVA analysis:
+Initial Key for category codes collected in data:
+
+Format: Same/Different(S/D) image | Mirror/Normal(M/N) orientation | French/Japanese/Faces/False/Tools (F/J/M/P/T) group
+
+1. DMF - Different Mirror French
+2. DMJ - Different Mirror Japanese
+3. DMM - Different Mirror Faces
+4. DMP - Different Mirror False
+5. DMT - Different Mirror Tools
+6. DNF - Different Normal French
+7. DNJ - Different Normal Japanese
+8. DNM - Different Normal Faces
+9. DNP - Different Normal False
+10. DNT - Different Normal Tools
+11. SMF - Same Mirror French
+12. SMJ - Same Mirror Japanese
+13. SMM - Same Mirror Faces
+14. SMP - Same Mirror False
+15. SMT - Same Mirror Tools
+16. SNF - Same Normal French
+17. SNJ - Same Normal Japanese
+18. SNM - Same Normal Faces
+19. SNP - Same Normal False
+20. SNT - Same Normal Tools
+
+These need to be split into additional columns such that a category effect analysis can be conducted for median response time ANOVA
+```{r include=T}
+
+#### Prepare data for analysis - Split the above category codes to denote same/different with Mirror/normal orientation and image group
+df.correct$SDNM = substr(df.correct$category, 1, 2)
+df.correct$group = substr(df.correct$category, 3, 3)
+
+df.correct = df.correct %>%
+  select(-c(category))
+```
+
+5. Data Analysis: Calculate median response time
+```{r include=T}
+
+#### Data analysis
+##Median RT##
+median_rt = df.correct %>%
+  group_by(group, workerid, SDNM, Language)%>%
+  summarise(median_rt = median(as.numeric(rt), na.rm =FALSE))
+
+```
+
+6. Data Analysis: Compute ANOVA; key effect of categories on median response time
+```{r include=T}
+#### Anova analysis
+anova_results <- aov(median_rt$median_rt ~ median_rt$group)
+summary(anova_results)
+```
+
+7. Additional analysis by replication report: Means of categories between each other.
+```{r include=T}
+cat_lm <- lm(median_rt ~ group, data=median_rt)
+anova(cat_lm)
+emmeans(cat_lm, pairwise ~ group, detailed= TRUE)
+
+```
+After conducting the above analysis, the first replication study was able to find significant results (p=0.04708) for category effect on mean correct response times which was consistent with the original study. However, the additional test comparing means of categories between each other did not show significant results which was inconsistent with the original study. 
+
+In our current rescue project analysis, we still see significant results (p = 4.52e-09) for the category effect on mean correct response times which is consistent with both the replication and original study. However, the additional test comparing means of categories between each other shows significant results (p = 4.524e-09) which is inconsistent with the replication project but is consistent with the original study. On conducting an emmeans category contrast, we see significant results mostly in images i.e. Faces and Tools (pvalues for: F - M [<.0001], F - T [<.0001], M - P [<.0001], P - T [<.0001] ) but not in scripts i.e. French, False fonts and Japanese letters . 
+
+
+[Results from Original study](Original.png)  
+
+[Results from Replication study](Replication.png) 
+
+
+Replication of figure 7 for the current analysis:
+
+```{r}
+level_order <- c('F','P','J','T','M') # F,P,J,T,M = "French", "False", "Japanese", "Tools","Faces" respectively
+median_rt %>%
+  group_by(group,Language, SDNM) %>%
+  summarize(mean_medianrt=mean(median_rt),
+            ci=1.96*sd(median_rt)/sqrt(n())) %>% 
+  mutate(SDNM=fct_relevel(SDNM,  "SN", "DN","SM", "DM")) %>% 
+  
+  ggplot(aes(x=group, y=mean_medianrt, fill= SDNM, bins=10)) + 
+  geom_bar(stat = 'identity', position = "dodge", width=1.00, color="black")+
+  scale_x_discrete(limits=level_order)+
+  geom_errorbar(aes(x=group, ymin=mean_medianrt, ymax=mean_medianrt+ci), width=0.2, position = position_dodge(0.9))+
+  
+  scale_x_discrete(name= "Categories",labels=c("French", "False", "Japanese", "Tools","Faces"))+
+  scale_fill_manual(name="Condition",values=c("SN"="blue4","DN"="mediumpurple1", "SM"="firebrick3", "DM"="lightgoldenrod1"), labels=c("Normal Same","Normal Different", "Mirror Same", "Mirror Different"))+
+  labs(y="Response Time(ms)") +
+  facet_wrap(~Language)+
+  theme_classic()
+```
+The replicated graph includes upper confidence interval since the study did not specify how error bars in Figure 7 was obtained. 
+
+## Discussion
+### Summary of Replication Attempt
+
+From the current study, we see that the original study (and the replication study) has been completely replicated with respect to the first analysis on category effect on median correct responses. However, the second analysis on means of median correct response times between the five image categories has been partially replicated with respect to the original study since we only see significant results in most of the image category contrasts but not all. Similarly we see non-significant results in all script category contrasts. Although this result is an improvement from the replication study, we cannot say for certain that mirror invariance is retained only for images and not scripts in adults due to the partial replication. The change in ordering of exclusion criteria while removing trials could be a leading factor to the result obtained. 
+
+### Commentary
+The current study does not address the replication study's comments where the report suggested using the same images as that of the original study to test the results. A third replication study could do this to verify if the partial replication can lead to a successful replication for the second analysis. Also, the images in the replication study and current study were not centered to the screen during presentation and both studies did not replicate the mean age criteria of 23 years for participants as mentioned in the original study. This could also be one of the factors for partial replication and should be corrected for in the third attempt to see if it leads to a complete replication of the original study. 
+
+Finally from an implementation standpoint, it would be interesting to see how well the original study is replicated when the stimulus presentation is broken into blocks and breaks with 20 trials per block rather than a continuous 15 minute presentation trial after trial. It could be possible that the fatigue experienced while responding to 280 trials continuously could lead to more incorrect/impatient responses and therefore, higher loss of trial data.  

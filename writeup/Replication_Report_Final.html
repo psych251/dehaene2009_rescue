@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Neha Rajagopalan (Email ID: neharaj@stanford.edu)">
+<meta name="dcterms.date" content="2024-12-08">
+
+<title>Replication of - Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al.&nbsp;(2009, NeuroImage)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Replication_Report_Final_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Replication_Report_Final_files/libs/quarto-html/quarto.js"></script>
+<script src="Replication_Report_Final_files/libs/quarto-html/popper.min.js"></script>
+<script src="Replication_Report_Final_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Replication_Report_Final_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Replication_Report_Final_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Replication_Report_Final_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Replication_Report_Final_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Replication_Report_Final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Replication_Report_Final_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#justification" id="toc-justification" class="nav-link" data-scroll-target="#justification">Justification</a></li>
+  <li><a href="#stimuli-and-procedure" id="toc-stimuli-and-procedure" class="nav-link" data-scroll-target="#stimuli-and-procedure">Stimuli and Procedure</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
+  <li><a href="#links-to-repository-and-original-paper" id="toc-links-to-repository-and-original-paper" class="nav-link" data-scroll-target="#links-to-repository-and-original-paper">Links to repository and original paper</a></li>
+  <li><a href="#links-to-replication-project-repository-and-experiment-paradigm" id="toc-links-to-replication-project-repository-and-experiment-paradigm" class="nav-link" data-scroll-target="#links-to-replication-project-repository-and-experiment-paradigm">Links to replication project repository and experiment paradigm:</a></li>
+  <li><a href="#link-to-current-replication-study-experiment-paradigm" id="toc-link-to-current-replication-study-experiment-paradigm" class="nav-link" data-scroll-target="#link-to-current-replication-study-experiment-paradigm">Link to current replication study experiment paradigm:</a></li>
+  </ul></li>
+  <li><a href="#summary-of-prior-replication-attempt" id="toc-summary-of-prior-replication-attempt" class="nav-link" data-scroll-target="#summary-of-prior-replication-attempt">Summary of prior replication attempt</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#power-analysis" id="toc-power-analysis" class="nav-link" data-scroll-target="#power-analysis">Power Analysis</a></li>
+  <li><a href="#planned-sample" id="toc-planned-sample" class="nav-link" data-scroll-target="#planned-sample">Planned Sample</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
+  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis Plan</a></li>
+  <li><a href="#differences-from-original-study-and-1st-replication" id="toc-differences-from-original-study-and-1st-replication" class="nav-link" data-scroll-target="#differences-from-original-study-and-1st-replication">Differences from Original Study and 1st replication</a></li>
+  <li><a href="#methods-addendum-post-data-collection" id="toc-methods-addendum-post-data-collection" class="nav-link" data-scroll-target="#methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a></li>
+  <li><a href="#confirmatory-analysis" id="toc-confirmatory-analysis" class="nav-link" data-scroll-target="#confirmatory-analysis">Confirmatory analysis</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-replication-attempt" id="toc-summary-of-replication-attempt" class="nav-link" data-scroll-target="#summary-of-replication-attempt">Summary of Replication Attempt</a></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary">Commentary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Replication of - Why do children make mirror errors in reading? Neural correlates of mirror invariance in the visual word form area- by Dehaene et al.&nbsp;(2009, NeuroImage)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Neha Rajagopalan (Email ID: neharaj@stanford.edu) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 8, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Mirror invariance refers to the phenomenon of differentiating mirror images from normally oriented images. It is known that mirror invariance occurs in children during reading and writing. The original study of this rescue project by Dehaene et al.&nbsp;aimed at investigating if this effect is retained in adults for reading and writing. Results show that recognition of mirror orientations occur only for images and not words.</p>
+<p>The replication project of this paper attempted to replicate these results by conducting an ANOVA on median response times of correct responses obtained in the “Same-Different” behavioral task of the original paper. The study was able to replicate the category effect on median correct response times but was unsuccessful while replicating whether mirror invariance occurs only for images and not in scripts. Through this rescue project, I would like to modify the replication project’s experiment design and verify if the original study is replicable with this new approach.</p>
+<section id="justification" class="level3">
+<h3 class="anchored" data-anchor-id="justification">Justification</h3>
+<p>As a PhD student in Developmental and Psychological Sciences at the Graduate School of Education, I am constantly thinking about methods to study underlying neural and behavioral changes that occur during learning in children and adults. Given my interests, I believe that the current chosen topic aligns perfectly with my goal to expand knowledge in education psychology and learn appropriate scientific reporting of results. The paper by Dehaene et al.&nbsp;discusses the disappearance of the “mirror effect” (i.e.&nbsp;writing words from right to left while children learn to read and write) in adults and further investigates a higher presence of mirror generalization for pictures than words through a behavioral task conducted in an fMRI scanner. In the past, I have explored literature in auditory processing and narratives for learning. Through this rescue project, however, I intend to be introduced to experiment design, priming effects and analysis metrics used in visual mechanism studies.</p>
+</section>
+<section id="stimuli-and-procedure" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli-and-procedure">Stimuli and Procedure</h3>
+<p>The behavioral task (called the “same-different” task) involves presenting 14 french words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, and 14 unknown scripts (all black and white) as visual stimuli along with their left-right reversed mirror images. Each trial displays two images from the same category at a fixation position with 200ms of presentation and 300ms of inter-stimulus interval. The participant responds with “same” to the pair of images if they are physically identical (eg. same word both in normal orientation or mirrored) and “different” if they are either unrelated (eg. two different words from the same category) or differently oriented (eg.different word followed by mirrored orientation).</p>
+</section>
+<section id="challenges" class="level3">
+<h3 class="anchored" data-anchor-id="challenges">Challenges</h3>
+<p>The target population is adults with a mean age of 23 years. Originally, the study is restricted to 26 participants. I believe that the analysis may require much more data to make generalizable conclusions on mirror invariance in adults and this might be difficult given the time constraint for data collection.</p>
+</section>
+<section id="links-to-repository-and-original-paper" class="level3">
+<h3 class="anchored" data-anchor-id="links-to-repository-and-original-paper">Links to repository and original paper</h3>
+<p><a href="https://github.com/psych251/dehaene2009_rescue">Link to github repository</a><br>
+<a href="https://github.com/psych251/dehaene2009_rescue/blob/main/original_paper/Dehaene2009_original_paper.pdf">Link to original paper in repository</a></p>
+</section>
+<section id="links-to-replication-project-repository-and-experiment-paradigm" class="level3">
+<h3 class="anchored" data-anchor-id="links-to-replication-project-repository-and-experiment-paradigm">Links to replication project repository and experiment paradigm:</h3>
+<p><a href="https://github.com/psych251/dehaene2009">Link to replication project repository</a><br>
+<a href="https://psych251.github.io/dehaene2009/">Link to experiment paradigm</a></p>
+</section>
+<section id="link-to-current-replication-study-experiment-paradigm" class="level3">
+<h3 class="anchored" data-anchor-id="link-to-current-replication-study-experiment-paradigm">Link to current replication study experiment paradigm:</h3>
+<p><a href="https://psych251.github.io/dehaene2009_rescue/">Link to experiment paradigm</a></p>
+</section>
+</section>
+<section id="summary-of-prior-replication-attempt" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-prior-replication-attempt">Summary of prior replication attempt</h2>
+<p>Although the original study consisted of an fMRI task and a behavioral task to investigate mirror invariance in adults, the prior replication study replicated the ‘Same-Different’ behavioral task only due to time and resource constraints. The first replication study used the same experiment design as the original study and conducted the following analysis similar to the original study:</p>
+<p>“Median correct response times were analyzed using an ANOVA with group as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts).”</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="power-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="power-analysis">Power Analysis</h3>
+<p>The original study fails to talk about effect size due to which the replication project eliminates a power analysis. The replication project does not mention effect size either. Hence a power analysis will not be conducted in this project as well.</p>
+</section>
+<section id="planned-sample" class="level3">
+<h3 class="anchored" data-anchor-id="planned-sample">Planned Sample</h3>
+<p>The rescue project plans to increase the sample size to 64 participants with 32 Japanese and 32 French participants who are all right-handed. The mean age of participants will also be modified to 23 years similar to the original study.</p>
+</section>
+<section id="materials" class="level3">
+<h3 class="anchored" data-anchor-id="materials">Materials</h3>
+<p>“All stimuli were presented in black-and-white, and occupied similar locations on screen (approximate width and height : 2° × 2° for Japanese characters and faces; 1.5–4° × 1.5–4° for tools, depending on their compactness and vertical or horizontal main axis; 0.8° × 2.3° for French words). Several precautions were taken to ensure that the task required view-point invariant recognition and could not be performed using simple short-cuts. All stimuli were selected so that they were clearly asymmetrical and maximally distinct from their mirror images. In particular, the faces were not front views, but were viewed and lit from an angle intermediate between profile and front view. Likewise, the Japanese characters were presented in a curvy font (“HG Sei-Kaisho-Tai”) so that they did not contain any vertical or horizontal bars that would be identical after left–right inversion. The French words had an even number of non-repeated letters, so that no letter was repeated at the same location in a word and its mirror-image. Finally, the French words were made of lower-case letters b, d, i, l, m, n, o, p, q, u, v, x, and were presented in an 20-point Arial font, slightly modified so that the above letters were exactly symmetrical on screen. As a result, even in mirror-image the words appeared as alphabetical strings made of essentially normal letters (non-French readers could not easily tell that they were not French words). A similar manipulation was not possible with Japanese characters, but we selected characters made of strokes that did not seem artificial once reversed (non-Japanese readers could not easily tell that these were not Japanese characters). French and Japanese words were matched on frequency (mean Log10 frequency = 1.14 versus 0.90, n.s.).” - Pg 1846</p>
+</section>
+<section id="procedure" class="level3">
+<h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
+<p>“The stimuli for the behavioral same-different task, performed after fMRI, were 14 French words, 14 Japanese characters, 14 pictures of tools, 14 pictures of faces, 14 unknown script stimuli, and their corresponding left–right reversed mirror images. On each trial, two stimuli from the same category were successively presented at the fixation (200 ms presentation of each image, 300 ms inter-stimulus interval with fixation cross). The participant’s task was to decide whether the two stimuli depicted the same object, possibly in mirror- form. Thus, the participants had to respond “same” both to physically identical stimuli (1/4 of trials) and to mirror images (1/4 of trials). They had to respond “different” whenever the stimuli were unrelated, whether they were in the same orientation (e.g.&nbsp;two normally oriented words; two faces in the same orientation; 1/4 of trials), or whether they were in different orientations (e.g.&nbsp;one word followed by a mirror image of a word). The first stimulus, drawn from one of the five categories, was always in standard orientation, and the second stimulus was defined by a 2 × 2 factorial design with factors of identity (same or different object) and orientation (same or different left– right orientation). This design defined a list of 14 × 5 × 2 × 2 = 280 trials, which were run once in random order.” - Pg 1846</p>
+</section>
+<section id="analysis-plan" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h3>
+<p>Similar to the original study and the replication report, the following analysis plan will be conducted:</p>
+<p>“The following analysis plan will be followed from the study: Median correct response times were analyzed using an ANOVA with group(language) as a between-subjects factor and stimulus category, repetition (same or different image) and orientation of the first image (normal or mirror; the second image was always in normal orientation) as within-subject factors. I will perform an ANOVA test to examine means of correct median response times between the five categories (French and Japanese words, tools, faces, and false fonts).”</p>
+</section>
+<section id="differences-from-original-study-and-1st-replication" class="level3">
+<h3 class="anchored" data-anchor-id="differences-from-original-study-and-1st-replication">Differences from Original Study and 1st replication</h3>
+<p>Based on a preliminary comparison between the original report and the first replication, there are no differences in sample size, method and analysis. Since the original study included an fMRI task, the study was conducted in-person as opposed to the replication study that collected behavioral data online. Due to this difference, participants did not have any exposure to same-different task in the replication study while they did during the original study. The original study had a final mean age of 23 years across participants but the replication study had a mean age of 36 years. The replication attempt was only partially successful since the author obtained results that were both consistent (median correct response times ANOVA) and inconsistent (additional means of correct median response times ANOVA) with the original report.</p>
+<p>The original study does not mention any methods of exclusion criteria or insertion of attention checks, whereas the replication study added the exclusion criteria since it was an online study (as opposed to the original study that was conducted in-person). The exclusion criteria included removal of trials that had a response time lesser than 100ms or greater than 2000ms. Further, participants with a response accuracy lesser than 80% were removed from the analysis. Finally, the replication projects uses different images than the images used in the original study. However, the images still pertain to the 5 categories mentioned in the original study.</p>
+<p>The main difference between the replication project and the current rescue project is the increase in sample size for the same analysis. The replication project chooses only 23 participants while this project proposes 64 participants. The other difference is during the analysis phase. The replication project first eliminates trials based on response times (removing trials less than 100 ms and greater than 2000ms) and then removes participants with a response accuracy less than 80%. The current rescue project, however, removes participants based on response accuracy first and then removes trials based on response times.</p>
+</section>
+<section id="methods-addendum-post-data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</h3>
+<!--You can comment this section out prior to final report with data collection.-->
+<section id="actual-sample" class="level4">
+<h4 class="anchored" data-anchor-id="actual-sample">Actual Sample</h4>
+<p>Out of the proposed 64 participant sample, only 43 completed the experiment. Out of these 43 participants, 21 were French and 22 were Japanese participants. The mean age was 37.93 years as opposed to the proposed 23 years.</p>
+</section>
+<section id="differences-from-pre-data-collection-methods-plan" class="level4">
+<h4 class="anchored" data-anchor-id="differences-from-pre-data-collection-methods-plan">Differences from pre-data collection methods plan</h4>
+<p>None</p>
+</section>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data preparation</h3>
+<p>The replication report cleaned the raw data (added a column) by clearly indicating whether the stimuli pairs were mirror imaged or normally oriented. This was a separate step since data collection did not include this differentiation. Preprocessing of data was completed prior to the anlaysis to obtain required rows and columns for the mirror invariance task based on exclusion criteria and image categorization.</p>
+<p>The current rescue project modifies the replication project data preparation by explicitly mentioning the image category and the orientation (mirror or normal) during the data collection step rather than during the data cleaning step.</p>
+</section>
+<section id="confirmatory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="confirmatory-analysis">Confirmatory analysis</h3>
+<p>The analysis for the ANOVA on median correct response times is as follows:</p>
+<!-- The replication study conducted ANOVA and found that category the effect on mean correct response times was significant (p=0.04708) and consistent with the original study. The author also ran an additional ANOVA to compare means of categories between each other but did not observe significant results (inconsistent with original study). -->
+<ol type="1">
+<li>First we load libraries:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Load Relevant Libraries and Functions</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"forcats"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"emmeans"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Next, we import the data on workerid-prolific_participantid, demographics (language of participants), and responses and combine them.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Import data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.participants <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"Final_Data/mirror_invariance_in_adults-trials.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 49020 Columns: 19
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (12): proliferate.condition, category, correct_response, failed_audio, f...
+dbl  (4): workerid, rt, time_elapsed, trial_index
+lgl  (3): success, timeout, error
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.work <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"Final_Data/mirror_invariance_in_adults-workerids.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 43 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): prolific_participant_id
+dbl (1): workerid
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.work <span class="ot">=</span> df.work <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">participantid =</span> prolific_participant_id)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df.demog <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"Final_Data/Demo_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 66 Columns: 21
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (15): Submission id, Participant id, Status, Custom study tncs accepted...
+dbl   (2): Time taken, Total approvals
+dttm  (4): Started at, Completed at, Reviewed at, Archived at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.demog <span class="ot">=</span> df.demog <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">participantid =</span> <span class="st">`</span><span class="at">Participant id</span><span class="st">`</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="do">### Joining the language data</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>df.combined_data <span class="ot">&lt;-</span> df.work <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(df.demog, <span class="at">by =</span> <span class="st">"participantid"</span>) <span class="sc">%&gt;%</span> <span class="co"># Join on 'participantid'</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(df.participants, <span class="at">by =</span> <span class="st">"workerid"</span>)   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Data filtering and exclusion: We clean the data to obtain only relevant columns and response trials. Next, we remove participants with an response accuracy lesser than 80% and the response time lesser than 100ms or greater than 2000ms</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Data filtering</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df.response <span class="ot">=</span> df.combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(workerid, category, correct_response, response, rt, stimulus, trial_index, task, Language) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(trial_index) <span class="sc">&gt;=</span> <span class="dv">17</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(correct_response)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(stimulus))</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="do">### Data exclusion 1: Removing participants with less than 80% accuracy of responses</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>accpercent <span class="ot">=</span> df.response <span class="sc">%&gt;%</span> </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workerid) <span class="sc">%&gt;%</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(<span class="at">accuracy =</span> response <span class="sc">==</span> correct_response) <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percentage =</span> n<span class="sc">/</span><span class="dv">280</span>) <span class="sc">%&gt;%</span>           <span class="co"># Number of trials for each participant = 280</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(accuracy <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">&amp;</span> percentage <span class="sc">&gt;=</span> <span class="fl">0.8</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>df.response <span class="ot">=</span> df.response <span class="sc">%&gt;%</span> </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(workerid <span class="sc">%in%</span> accpercent<span class="sc">$</span>workerid)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">### Data exclusion 2:Removing trials with response time less than 100ms or greater than 2000ms</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>df.correct <span class="ot">=</span> df.response <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(rt) <span class="sc">&gt;=</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(rt) <span class="sc">&lt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we filter correct responses</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(response <span class="sc">==</span> correct_response) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Data preparation for median response time ANOVA analysis: Initial Key for category codes collected in data:</li>
+</ol>
+<p>Format: Same/Different(S/D) image | Mirror/Normal(M/N) orientation | French/Japanese/Faces/False/Tools (F/J/M/P/T) group</p>
+<ol type="1">
+<li>DMF - Different Mirror French</li>
+<li>DMJ - Different Mirror Japanese</li>
+<li>DMM - Different Mirror Faces</li>
+<li>DMP - Different Mirror False</li>
+<li>DMT - Different Mirror Tools</li>
+<li>DNF - Different Normal French</li>
+<li>DNJ - Different Normal Japanese</li>
+<li>DNM - Different Normal Faces</li>
+<li>DNP - Different Normal False</li>
+<li>DNT - Different Normal Tools</li>
+<li>SMF - Same Mirror French</li>
+<li>SMJ - Same Mirror Japanese</li>
+<li>SMM - Same Mirror Faces</li>
+<li>SMP - Same Mirror False</li>
+<li>SMT - Same Mirror Tools</li>
+<li>SNF - Same Normal French</li>
+<li>SNJ - Same Normal Japanese</li>
+<li>SNM - Same Normal Faces</li>
+<li>SNP - Same Normal False</li>
+<li>SNT - Same Normal Tools</li>
+</ol>
+<p>These need to be split into additional columns such that a category effect analysis can be conducted for median response time ANOVA</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Prepare data for analysis - Split the above category codes to denote same/different with Mirror/normal orientation and image group</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df.correct<span class="sc">$</span>SDNM <span class="ot">=</span> <span class="fu">substr</span>(df.correct<span class="sc">$</span>category, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df.correct<span class="sc">$</span>group <span class="ot">=</span> <span class="fu">substr</span>(df.correct<span class="sc">$</span>category, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>df.correct <span class="ot">=</span> df.correct <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(category))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Data Analysis: Calculate median response time</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Data analysis</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="do">##Median RT##</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>median_rt <span class="ot">=</span> df.correct <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group, workerid, SDNM, Language)<span class="sc">%&gt;%</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_rt =</span> <span class="fu">median</span>(<span class="fu">as.numeric</span>(rt), <span class="at">na.rm =</span><span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'group', 'workerid', 'SDNM'. You can
+override using the `.groups` argument.</code></pre>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Data Analysis: Compute ANOVA; key effect of categories on median response time</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Anova analysis</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>anova_results <span class="ot">&lt;-</span> <span class="fu">aov</span>(median_rt<span class="sc">$</span>median_rt <span class="sc">~</span> median_rt<span class="sc">$</span>group)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Df   Sum Sq Mean Sq F value   Pr(&gt;F)    
+median_rt$group   4  1902685  475671   11.47 4.52e-09 ***
+Residuals       834 34575200   41457                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Additional analysis by replication report: Means of categories between each other.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cat_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(median_rt <span class="sc">~</span> group, <span class="at">data=</span>median_rt)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(cat_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: median_rt
+           Df   Sum Sq Mean Sq F value    Pr(&gt;F)    
+group       4  1902685  475671  11.474 4.524e-09 ***
+Residuals 834 34575200   41457                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans</span>(cat_lm, pairwise <span class="sc">~</span> group, <span class="at">detailed=</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$emmeans
+ group emmean   SE  df lower.CL upper.CL
+ F        663 15.8 834      632      694
+ J        615 15.7 834      585      646
+ M        558 15.7 834      527      588
+ P        664 15.7 834      633      695
+ T        557 15.7 834      526      588
+
+Confidence level used: 0.95 
+
+$contrasts
+ contrast estimate   SE  df t.ratio p.value
+ F - J      47.963 22.2 834   2.156  0.1978
+ F - M     105.734 22.2 834   4.752  &lt;.0001
+ F - P      -0.855 22.2 834  -0.038  1.0000
+ F - T     106.225 22.2 834   4.774  &lt;.0001
+ J - M      57.771 22.2 834   2.600  0.0712
+ J - P     -48.818 22.2 834  -2.197  0.1816
+ J - T      58.262 22.2 834   2.623  0.0672
+ M - P    -106.589 22.2 834  -4.798  &lt;.0001
+ M - T       0.491 22.2 834   0.022  1.0000
+ P - T     107.080 22.2 834   4.820  &lt;.0001
+
+P value adjustment: tukey method for comparing a family of 5 estimates </code></pre>
+</div>
+</div>
+<p>After conducting the above analysis, the first replication study was able to find significant results (p=0.04708) for category effect on mean correct response times which was consistent with the original study. However, the additional test comparing means of categories between each other did not show significant results which was inconsistent with the original study.</p>
+<p>In our current rescue project analysis, we still see significant results (p = 4.52e-09) for the category effect on mean correct response times which is consistent with both the replication and original study. However, the additional test comparing means of categories between each other shows significant results (p = 4.524e-09) which is inconsistent with the replication project but is consistent with the original study. On conducting an emmeans category contrast, we see significant results mostly in images i.e.&nbsp;Faces and Tools (pvalues for: F - M [&lt;.0001], F - T [&lt;.0001], M - P [&lt;.0001], P - T [&lt;.0001] ) but not in scripts i.e.&nbsp;French, False fonts and Japanese letters .</p>
+<p><a href="Original.png">Results from Original study</a></p>
+<p><a href="Replication.png">Results from Replication study</a></p>
+<p>Replication of figure 7 for the current analysis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>level_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'F'</span>,<span class="st">'P'</span>,<span class="st">'J'</span>,<span class="st">'T'</span>,<span class="st">'M'</span>) <span class="co"># F,P,J,T,M = "French", "False", "Japanese", "Tools","Faces" respectively</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>median_rt <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group,Language, SDNM) <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_medianrt=</span><span class="fu">mean</span>(median_rt),</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci=</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sd</span>(median_rt)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>())) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">SDNM=</span><span class="fu">fct_relevel</span>(SDNM,  <span class="st">"SN"</span>, <span class="st">"DN"</span>,<span class="st">"SM"</span>, <span class="st">"DM"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>group, <span class="at">y=</span>mean_medianrt, <span class="at">fill=</span> SDNM, <span class="at">bins=</span><span class="dv">10</span>)) <span class="sc">+</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">'identity'</span>, <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width=</span><span class="fl">1.00</span>, <span class="at">color=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">limits=</span>level_order)<span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x=</span>group, <span class="at">ymin=</span>mean_medianrt, <span class="at">ymax=</span>mean_medianrt<span class="sc">+</span>ci), <span class="at">width=</span><span class="fl">0.2</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>))<span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name=</span> <span class="st">"Categories"</span>,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"French"</span>, <span class="st">"False"</span>, <span class="st">"Japanese"</span>, <span class="st">"Tools"</span>,<span class="st">"Faces"</span>))<span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">"Condition"</span>,<span class="at">values=</span><span class="fu">c</span>(<span class="st">"SN"</span><span class="ot">=</span><span class="st">"blue4"</span>,<span class="st">"DN"</span><span class="ot">=</span><span class="st">"mediumpurple1"</span>, <span class="st">"SM"</span><span class="ot">=</span><span class="st">"firebrick3"</span>, <span class="st">"DM"</span><span class="ot">=</span><span class="st">"lightgoldenrod1"</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Normal Same"</span>,<span class="st">"Normal Different"</span>, <span class="st">"Mirror Same"</span>, <span class="st">"Mirror Different"</span>))<span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">"Response Time(ms)"</span>) <span class="sc">+</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Language)<span class="sc">+</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'group', 'Language'. You can override using
+the `.groups` argument.
+Scale for x is already present. Adding another scale for x, which will replace
+the existing scale.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Replication_Report_Final_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The replicated graph includes upper confidence interval since the study did not specify how error bars in Figure 7 was obtained.</p>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<section id="summary-of-replication-attempt" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-replication-attempt">Summary of Replication Attempt</h3>
+<p>From the current study, we see that the original study (and the replication study) has been completely replicated with respect to the first analysis on category effect on median correct responses. However, the second analysis on means of median correct response times between the five image categories has been partially replicated with respect to the original study since we only see significant results in most of the image category contrasts but not all. Similarly we see non-significant results in all script category contrasts. Although this result is an improvement from the replication study, we cannot say for certain that mirror invariance is retained only for images and not scripts in adults due to the partial replication. The change in ordering of exclusion criteria while removing trials could be a leading factor to the result obtained.</p>
+</section>
+<section id="commentary" class="level3">
+<h3 class="anchored" data-anchor-id="commentary">Commentary</h3>
+<p>The current study does not address the replication study’s comments where the report suggested using the same images as that of the original study to test the results. A third replication study could do this to verify if the partial replication can lead to a successful replication for the second analysis. Also, the images in the replication study and current study were not centered to the screen during presentation and both studies did not replicate the mean age criteria of 23 years for participants as mentioned in the original study. This could also be one of the factors for partial replication and should be corrected for in the third attempt to see if it leads to a complete replication of the original study.</p>
+<p>Finally from an implementation standpoint, it would be interesting to see how well the original study is replicated when the stimulus presentation is broken into blocks and breaks with 20 trials per block rather than a continuous 15 minute presentation trial after trial. It could be possible that the fatigue experienced while responding to 280 trials continuously could lead to more incorrect/impatient responses and therefore, higher loss of trial data.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
